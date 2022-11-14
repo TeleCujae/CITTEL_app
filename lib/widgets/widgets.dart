@@ -49,11 +49,11 @@ class ScheduleWidget extends StatelessWidget {
           ),
         ),
         trailing: Text(
-          DateFormat('hh:mm a\ndd/MM').format(task.taskTime),
+          "${DateFormat('dd/MM\nhh:mm a').format(task.taskTime)}\n${DateFormat("hh:mm a").format(task.taskTimeEnd)}",
           textAlign: TextAlign.right,
           style: const TextStyle(
-            color: Colors.black45,
-            fontSize: 16,
+            color: Colors.black87,
+            fontSize: 13,
           ),
         ),
       ),
@@ -83,7 +83,8 @@ class PersonaInfoWidget extends StatelessWidget {
         ),
         child: ListTile(
           leading: CircleAvatar(
-            foregroundImage: ExactAssetImage('assets/images/${info.image}'),
+            foregroundImage:
+                ExactAssetImage('assets/images/profile/${info.image}'),
           ),
           contentPadding: const EdgeInsets.symmetric(
             vertical: 8,
@@ -101,6 +102,106 @@ class PersonaInfoWidget extends StatelessWidget {
           ),
           subtitle: Text(
             useEnglish ? info.descriptionEng : info.description,
+            style: const TextStyle(
+              color: Colors.black,
+              fontSize: 16,
+            ),
+            // textAlign: TextAlign.justify,
+          ),
+        ));
+  }
+}
+
+class AboutWidget extends StatelessWidget {
+  final bool useEnglish;
+
+  const AboutWidget({
+    Key? key,
+    required this.useEnglish,
+  }) : super(key: key);
+
+  final String infoEs =
+  '''El Congreso Internacional de Telemática y Telecomunicaciones (CITTEL) es un evento desarrollado por la Facultad de Ingeniería en Telecomunicaciones y Electrónica. Está dirigido a especialistas, funcionarios, científicos y estudiantes de la comunidad nacional e internacional interesados en el análisis y propuestas de soluciones de problemas actuales relacionados con la telemática, las telecomunicaciones y disciplinas afines.\n\nPuede interactuar con el Comité Organizador en la dirección de correo: cittel@tele.cujae.edu.cu.\n\nLa convocatoria está disponible en https://ccia.cujae.edu.cu/index.php/cittel/index''';
+
+  final String infoEn =
+  '''The International Congress on Telematics and Telecommunications (CITTEL) is an event developed by the School of Telecommunications and Electronics Engineering. It is aimed at specialists, officials, scientists and students from the national and international community interested in analyzing and proposing solutions to current problems related to telematics, telecommunications and related disciplines. You can interact with the Organizing Committee at the following e-mail address: cittel@tele.cujae.edu.cu. The call for papers is available at https://ccia.cujae.edu.cu/index.php/cittel/index.''';
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+        elevation: 8,
+        shadowColor: const Color(0xff2da9ef),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(
+            10,
+          ),
+        ),
+        child: ListTile(
+          contentPadding: const EdgeInsets.symmetric(
+            vertical: 8,
+            horizontal: 16,
+          ),
+          title: const Padding(
+            padding: EdgeInsets.symmetric(vertical: 8.0),
+            child: Text(
+              'CITTEL',
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+          subtitle: Text(
+            useEnglish ? infoEn : infoEs,
+            style: const TextStyle(
+              color: Colors.black,
+              fontSize: 16,
+            ),
+            // textAlign: TextAlign.justify,
+          ),
+        ));
+  }
+}
+
+class CreditsWidget extends StatelessWidget {
+  final bool useEnglish;
+
+  const CreditsWidget({
+    Key? key,
+    required this.useEnglish,
+  }) : super(key: key);
+
+  final String infoEs = 'Hecho en la CUJAE\n\nVersion 1.0';
+
+  final String infoEn = 'Made at CUJAE\n\nVersion 1.0';
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+        elevation: 8,
+        shadowColor: const Color(0xff2da9ef),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(
+            10,
+          ),
+        ),
+        child: ListTile(
+          contentPadding: const EdgeInsets.symmetric(
+            vertical: 8,
+            horizontal: 16,
+          ),
+          title: const Padding(
+            padding: EdgeInsets.symmetric(vertical: 8.0),
+            child: Text(
+              'Credits',
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+          subtitle: Text(
+            useEnglish ? infoEn : infoEs,
             style: const TextStyle(
               color: Colors.black,
               fontSize: 16,

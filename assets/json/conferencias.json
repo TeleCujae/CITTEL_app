@@ -1,0 +1,167 @@
+[
+  {
+    "type": "course",
+    "day": 28,
+    "month": 11,
+    "year": 2022,
+    "hour_from": 9,
+    "min_from": 0,
+    "hour_to": 9,
+    "min_to": 0,
+    "title": {
+      "es": "Computación en la Nube, soluciones y proveedores",
+      "en": "Cloud computing, solutions and providers"
+    },
+    "author": "Dra.C. Lilia Rosa García Perellada"
+  },
+  {
+    "type": "master",
+    "day": 29,
+    "month": 11,
+    "year": 2022,
+    "hour_from": 9,
+    "min_from": 30,
+    "hour_to": 9,
+    "min_to": 30,
+    "title": {
+      "es": "Computación de borde virtual 6G para fortalecer la resilencia de las redes",
+      "en": "6G Virtual Edge Computing for Enhanced Network Resilience"
+    },
+    "author": "Ph.D. Falko Dressler"
+  },
+  {
+    "type": "panel",
+    "day": 29,
+    "month": 11,
+    "year": 2022,
+    "hour_from": 10,
+    "min_from": 30,
+    "hour_to": 10,
+    "min_to": 30,
+    "title": {
+      "es": "Sistemas de Telecomunicaciones",
+      "en": "Telecommunications Systems"
+    },
+    "author": ""
+  },
+  {
+    "type": "master",
+    "day": 29,
+    "month": 11,
+    "year": 2022,
+    "hour_from": 12,
+    "min_from": 0,
+    "hour_to": 12,
+    "min_to": 0,
+    "title": {
+      "es": "Habilitando el aprendizaje automático distribuido mediante topologías de red óptimas",
+      "en": "Enabling Distributed Machine Learning Through Optimal Network Topologies"
+    },
+    "author": "Ph.D. Carla Fabiana Chiasserini"
+  },
+  {
+    "type": "panel",
+    "day": 29,
+    "month": 11,
+    "year": 2022,
+    "hour_from": 13,
+    "min_from": 0,
+    "hour_to": 13,
+    "min_to": 0,
+    "title": {
+      "es": "Procesamiento Digital de Señales",
+      "en": "Digital Signal Processing"
+    },
+    "author": ""
+  },
+  {
+    "type": "workshop",
+    "day": 30,
+    "month": 11,
+    "year": 2022,
+    "hour_from": 9,
+    "min_from": 0,
+    "hour_to": 9,
+    "min_to": 0,
+    "title": {
+      "es": "Programa sectorial de Ciencia, Tecnología e innovación (PSCTI) de Telecomunicaciones del MINCOM",
+      "en": "Science, Technology and Innovation Sector Program (PSCTI) for Telecommunications of MINCOM"
+    },
+    "author": ""
+  },
+  {
+    "type": "workshop",
+    "day": 1,
+    "month": 12,
+    "year": 2022,
+    "hour_from": 9,
+    "min_from": 0,
+    "hour_to": 9,
+    "min_to": 0,
+    "title": {
+      "es": "Posgrado, pregrado e investigación en la carrera de Ingeniería en Telecomunicaciones y Electrónica",
+      "en": "Postgraduate, undergraduate and research in Telecommunications and Electronics Engineering"
+    },
+    "author": ""
+  },
+  {
+    "type": "master",
+    "day": 2,
+    "month": 12,
+    "year": 2022,
+    "hour_from": 9,
+    "min_from": 0,
+    "hour_to": 9,
+    "min_to": 0,
+    "title": {
+      "es": "NFV, ¿a dónde vamos ahora?",
+      "en": "NFV, where to go next"
+    },
+    "author": "Alain A. Garófalo Hernández"
+  },
+  {
+    "type": "panel",
+    "day": 2,
+    "month": 12,
+    "year": 2022,
+    "hour_from": 10,
+    "min_from": 0,
+    "hour_to": 10,
+    "min_to": 0,
+    "title": {
+      "es": "Sistemas de Radiocomunicaciones",
+      "en": "Radiocommunication Systems"
+    },
+    "author": ""
+  },
+  {
+    "type": "master",
+    "day": 2,
+    "month": 12,
+    "year": 2022,
+    "hour_from": 11,
+    "min_from": 0,
+    "hour_to": 11,
+    "min_to": 0,
+    "title": {
+      "es": "Intensificación de la gestión del espectro radioeléctrico: reto y necesidad",
+      "en": "Intensification of radio spectrum management: challenge and necessity"
+    },
+    "author": "Enildo Sánchez Rodríguez"
+  },
+  {
+    "type": "panel",
+    "day": 2,
+    "month": 12,
+    "year": 2022,
+    "hour_from": 12,
+    "min_from": 0,
+    "hour_to": 12,
+    "min_to": 0,
+    "title": {
+      "es": "Sistemas de Radiocomunicaciones",
+      "en": "Radiocommunication Systems"
+    },
+    "author": ""
+  }
+]
