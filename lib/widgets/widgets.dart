@@ -41,12 +41,12 @@ class EventWidget extends StatelessWidget {
       ),
       child: ListTile(
         contentPadding: const EdgeInsets.symmetric(
-          vertical: 8,
-          horizontal: 16,
+          vertical: 5,
+          horizontal: 10,
         ),
         minLeadingWidth: 2,
         leading: Container(
-          width: 2,
+          width: 5,
           color: color,
         ),
         title: Padding(
@@ -54,7 +54,7 @@ class EventWidget extends StatelessWidget {
           child: Text(
             task.title,
             style: const TextStyle(
-              fontSize: 24,
+              fontSize: 20,
               fontWeight: FontWeight.bold,
             ),
           ),
@@ -71,7 +71,7 @@ class EventWidget extends StatelessWidget {
           textAlign: TextAlign.right,
           style: const TextStyle(
             color: Colors.black,
-            fontSize: 12,
+            fontSize: 14,
           ),
         ),
       ),

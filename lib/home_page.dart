@@ -89,8 +89,8 @@ class _HomePageState extends State<HomePage> {
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
 
     WidgetsBinding.instance.addPostFrameCallback((_) async {
-      lecturers = await loadJson('json/lecturers.json');
-      fullProgram = await loadJson('json/full_program.json');
+      lecturers = await loadJson('assets/json/lecturers.json');
+      fullProgram = await loadJson('assets/json/full_program.json');
     });
   }
 
@@ -253,11 +253,11 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           Positioned(
-            top: size.height / 3.8,
-            left: 16,
+            top: size.height / 4.3,
+            left: 0,
             child: Container(
-              width: size.width - 32,
-              height: size.height / 1.7,
+              width: size.width,
+              height: size.height / 1.45,
               decoration: const BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.horizontal(
@@ -320,9 +320,9 @@ class _HomePageState extends State<HomePage> {
           ),
           Positioned(
             top: size.height / 20,
-            left: 6.3 * size.width / 8,
+            left: 6.7 * size.width / 8,
             child: SizedBox(
-              width: size.width / 5,
+              width: size.width / 6,
               height: size.height / 20,
               child: ElevatedButton(
                 onPressed: () {
@@ -351,9 +351,9 @@ class _HomePageState extends State<HomePage> {
         bodyChildren = [
           Positioned(
             top: 0,
-            left: 16,
+            left: 0,
             child: Container(
-              width: size.width - 32,
+              width: size.width,
               height: size.height / 1.2,
               decoration: const BoxDecoration(
                 color: Colors.white,
@@ -410,9 +410,9 @@ class _HomePageState extends State<HomePage> {
         bodyChildren = [
           Positioned(
             top: 0,
-            left: 16,
+            left: 0,
             child: Container(
-              width: size.width - 32,
+              width: size.width,
               height: size.height / 1.2,
               decoration: const BoxDecoration(
                 color: Colors.white,
@@ -422,7 +422,7 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               child: Padding(
-                padding: const EdgeInsets.all(8),
+                padding: const EdgeInsets.all(0),
                 child: ListView.separated(
                   padding: const EdgeInsets.only(
                     top: 8,
@@ -469,9 +469,9 @@ class _HomePageState extends State<HomePage> {
         bodyChildren = [
           Positioned(
             top: 0,
-            left: 16,
+            left: 0,
             child: Container(
-              width: size.width - 32,
+              width: size.width,
               height: size.height / 1.2,
               decoration: const BoxDecoration(
                 color: Colors.white,
@@ -526,10 +526,10 @@ class _HomePageState extends State<HomePage> {
         bodyChildren = [
           Positioned(
             top: 0,
-            left: 16,
+            left: 0,
             child: Container(
-              width: size.width - 32,
-              height: size.height / 1.1,
+              width: size.width,
+              height: size.height / 1.2,
               decoration: const BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.horizontal(
