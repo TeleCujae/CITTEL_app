@@ -41,10 +41,6 @@ class _HomePageState extends State<HomePage> {
     List<Event> tasks = [];
 
     for (var e in data) {
-      if (e['type'] == 'session') {
-        continue;
-      }
-
       tasks.add(
         Event(
           useEnglish ? e["title"]["en"] : e["title"]["es"],

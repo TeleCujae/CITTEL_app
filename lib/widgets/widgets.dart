@@ -13,6 +13,24 @@ class EventWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var color = Colors.blue;
+    var time = '${DateFormat('dd/MM\nhh:mm a').format(task.startTime)}\n'
+        '${DateFormat("hh:mm a").format(task.endTime)}';
+
+    if (task.type == 'course') {
+    } else if (task.type == 'other') {
+    } else if (task.type == 'session') {
+      color = Colors.green;
+      time = '';
+    } else if (task.type == 'master') {
+      color = Colors.red;
+    } else if (task.type == 'panel') {
+    } else if (task.type == 'presentation') {
+    } else if (task.type == 'workshop') {
+    } else if (task.type == 'project') {
+    } else if (task.type == 'conference') {
+    } else if (task.type == 'topics') {}
+
     return Card(
       elevation: 8,
       shadowColor: const Color(0xff2da9ef),
@@ -29,7 +47,7 @@ class EventWidget extends StatelessWidget {
         minLeadingWidth: 2,
         leading: Container(
           width: 2,
-          color: const Color(0xff2da9ef),
+          color: color,
         ),
         title: Padding(
           padding: const EdgeInsets.symmetric(vertical: 8.0),
@@ -43,16 +61,16 @@ class EventWidget extends StatelessWidget {
         ),
         subtitle: Text(
           task.description,
-          style: TextStyle(
-            color: Colors.blue.shade700,
+          style: const TextStyle(
+            color: Colors.black,
             fontSize: 16,
           ),
         ),
         trailing: Text(
-          "${DateFormat('dd/MM\nhh:mm a').format(task.startTime)}\n${DateFormat("hh:mm a").format(task.endTime)}",
+          time,
           textAlign: TextAlign.right,
           style: const TextStyle(
-            color: Colors.black87,
+            color: Colors.black,
             fontSize: 12,
           ),
         ),
