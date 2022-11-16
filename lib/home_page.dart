@@ -1,7 +1,8 @@
 import 'dart:convert';
-import 'package:flutter/material.dart';
+
 import 'package:cittel_app/models/models.dart';
 import 'package:cittel_app/widgets/widgets.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class HomePage extends StatefulWidget {
@@ -11,104 +12,304 @@ class HomePage extends StatefulWidget {
   State<HomePage> createState() => _HomePageState();
 }
 
-bool inMainMenu = true;
-bool useEnglish = false;
-ListView view = ListView.separated(
-  padding: const EdgeInsets.only(
-    top: 8,
-  ),
-  itemBuilder: (context, index) {
-    return AboutWidget(
-      useEnglish: false,
-    );
-  },
-  itemCount: 1,
-  separatorBuilder: (context, index) {
-    return const SizedBox(
-      height: 4,
-    );
-  },
-);
-DateTime filter = DateTime.now();
-
-late final conferencistas;
-late final conferencias;
-
-loadJson(String path) async {
-  String data = await rootBundle.loadString(path);
-  return json.decode(data);
-}
-
-List<Task> getTasks(List<dynamic> data) {
-  List<Task> tasks = [];
-
-  for (var e in data) {
-    tasks.add(Task(
-        useEnglish ? e["title"]["en"] : e["title"]["es"],
-        e['author'],
-        DateTime(e['year'], e['month'], e['day'], e['hour_from'], e['min_from']),
-        DateTime(e['year'], e['month'], e['day'], e['hour_to'], e['min_to']),
-        e['type']));
-  }
-
-  return tasks;
-}
-
-List<PersonaInfo> getPersonaInfo(Map<String, dynamic> data) {
-  List<PersonaInfo> infos = [];
-
-  for (var e in data.entries) {
-    infos.add(PersonaInfo(e.key, e.value['details']['es'],
-        e.value['details']['en'], e.value['image']));
-  }
-
-  return infos;
+enum CurrentPage {
+  home,
+  committee,
+  program,
+  conferences,
+  workshops,
+  stands,
+  lecturers,
+  about
 }
 
 class _HomePageState extends State<HomePage> {
+  CurrentPage page = CurrentPage.home;
+  bool useEnglish = false;
+
+  DateTime? filter;
+
+  late final Map<String, dynamic> lecturers;
+  late final List<dynamic> fullProgram;
+
+  loadJson(String path) async {
+    String data = await rootBundle.loadString(path);
+    return json.decode(data);
+  }
+
+  List<Event> getTasks(List<dynamic> data) {
+    List<Event> tasks = [];
+
+    for (var e in data) {
+      if (e['type'] == 'session') {
+        continue;
+      }
+
+      tasks.add(
+        Event(
+          useEnglish ? e["title"]["en"] : e["title"]["es"],
+          e['author'],
+          DateTime(
+            e['year'],
+            e['month'],
+            e['day'],
+            e['hour_from'],
+            e['min_from'],
+          ),
+          DateTime(
+            e['year'],
+            e['month'],
+            e['day'],
+            e['hour_to'],
+            e['min_to'],
+          ),
+          e['type'],
+        ),
+      );
+    }
+
+    return tasks;
+  }
+
+  List<Lecturer> getPersonaInfo(Map<String, dynamic> data) {
+    List<Lecturer> infos = [];
+
+    for (var e in data.entries) {
+      infos.add(
+        Lecturer(
+          e.key,
+          useEnglish ? e.value['details']['es'] : e.value['details']['en'],
+          e.value['image'],
+        ),
+      );
+    }
+
+    return infos;
+  }
+
   @override
   void initState() {
     super.initState();
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
 
     WidgetsBinding.instance.addPostFrameCallback((_) async {
-      conferencistas = await loadJson('json/conferencistas.json');
-      conferencias = await loadJson('json/conferencias.json');
+      lecturers = await loadJson('json/lecturers.json');
+      fullProgram = await loadJson('json/full_program.json');
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
-
     final size = MediaQuery.of(context).size;
 
-    return Scaffold(
-      drawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: <Widget>[
-            const DrawerHeader(
-              decoration: BoxDecoration(
-                color: Colors.blue,
+    AppBar appBar = AppBar(
+      flexibleSpace: const Image(
+        image: AssetImage('assets/images/header.png'),
+        fit: BoxFit.fitHeight,
+      ),
+      backgroundColor: Colors.blue,
+    );
+    Drawer drawer = Drawer(
+      child: ListView(
+        padding: EdgeInsets.zero,
+        children: <Widget>[
+          const DrawerHeader(
+            decoration: BoxDecoration(
+              color: Colors.blue,
+              image: DecorationImage(
+                fit: BoxFit.scaleDown,
+                image: AssetImage('assets/images/header.png'),
+              ),
+            ),
+            child: null,
+          ),
+          ListTile(
+            leading: const Icon(Icons.home),
+            title: const Text('Home'),
+            onTap: () {
+              setState(() {
+                page = CurrentPage.home;
+              });
+              Navigator.of(context).pop();
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.account_tree),
+            title: const Text('Organizing Committee'),
+            onTap: () {
+              setState(() {
+                page = CurrentPage.committee;
+              });
+              Navigator.of(context).pop();
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.science),
+            title: const Text('Scientific Programs'),
+            onTap: () {
+              setState(() {
+                page = CurrentPage.program;
+              });
+              Navigator.of(context).pop();
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.airplay),
+            title: const Text('Master Conferences'),
+            onTap: () {
+              setState(() {
+                page = CurrentPage.conferences;
+              });
+              Navigator.of(context).pop();
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.architecture),
+            title: const Text('Courses and workshops'),
+            onTap: () {
+              setState(() {
+                page = CurrentPage.workshops;
+              });
+              Navigator.of(context).pop();
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.assistant),
+            title: const Text('Stand'),
+            onTap: () {
+              setState(() {
+                page = CurrentPage.stands;
+              });
+              Navigator.of(context).pop();
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.people),
+            title: const Text('Lecturers'),
+            onTap: () {
+              setState(() {
+                page = CurrentPage.lecturers;
+              });
+              Navigator.of(context).pop();
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.info),
+            title: const Text('About'),
+            onTap: () {
+              setState(() {
+                page = CurrentPage.about;
+              });
+              Navigator.of(context).pop();
+            },
+          ),
+        ],
+      ),
+    );
+    List<Widget> bodyChildren = [];
+
+    switch (page) {
+      case CurrentPage.home:
+        bodyChildren = [
+          Positioned(
+            child: Container(
+              width: size.width,
+              height: size.height / 4,
+              decoration: const BoxDecoration(
                 image: DecorationImage(
-                  fit: BoxFit.fill,
-                  image: AssetImage('assets/images/header.png'),
+                  image: ExactAssetImage('assets/images/splash.png'),
+                  scale: 25,
                 ),
               ),
-              child: null,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  ListTile(
+                    horizontalTitleGap: 12.5,
+                    contentPadding: const EdgeInsets.all(4),
+                    leading: Text(
+                      DateTime.now().day.toString(),
+                      style: const TextStyle(
+                        fontSize: 40,
+                        color: Colors.amber,
+                      ),
+                    ),
+                    title: Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 3.0),
+                      child: Text(
+                        DateTime.now().month.toString(),
+                        style: const TextStyle(
+                          fontSize: 13,
+                          color: Colors.black,
+                        ),
+                      ),
+                    ),
+                    subtitle: Text(
+                      DateTime.now().year.toString(),
+                      style: const TextStyle(
+                        fontSize: 13,
+                        color: Colors.black,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
-            ListTile(
-              leading: const Icon(Icons.home),
-              title: const Text('Home'),
-              onTap: () {
-                inMainMenu = true;
-                view = ListView.separated(
+          ),
+          Positioned(
+            top: size.height / 3.8,
+            left: 16,
+            child: Container(
+              width: size.width - 32,
+              height: size.height / 1.7,
+              decoration: const BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.horizontal(
+                  left: Radius.circular(10),
+                  right: Radius.circular(10),
+                ),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(8),
+                child: ListView.separated(
                   padding: const EdgeInsets.only(
                     top: 8,
                   ),
                   itemBuilder: (context, index) {
-                    return AboutWidget(
-                      useEnglish: useEnglish,
+                    return Card(
+                      elevation: 8,
+                      shadowColor: const Color(0xff2da9ef),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(
+                          10,
+                        ),
+                      ),
+                      child: ListTile(
+                        contentPadding: const EdgeInsets.symmetric(
+                          vertical: 8,
+                          horizontal: 16,
+                        ),
+                        title: const Padding(
+                          padding: EdgeInsets.symmetric(vertical: 8.0),
+                          child: Text(
+                            'CITTEL',
+                            style: TextStyle(
+                              fontSize: 24,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                        subtitle: Text(
+                          useEnglish
+                              ? '''The International Congress on Telematics and Telecommunications (CITTEL) is an event developed by the School of Telecommunications and Electronics Engineering. It is aimed at specialists, officials, scientists and students from the national and international community interested in analyzing and proposing solutions to current problems related to telematics, telecommunications and related disciplines.\n\nYou can interact with the Organizing Committee at the following e-mail address: cittel@tele.cujae.edu.cu.\n\nThe call for papers is available at https://ccia.cujae.edu.cu/index.php/cittel/index.'''
+                              : '''El Congreso Internacional de Telemática y Telecomunicaciones (CITTEL) es un evento desarrollado por la Facultad de Ingeniería en Telecomunicaciones y Electrónica. Está dirigido a especialistas, funcionarios, científicos y estudiantes de la comunidad nacional e internacional interesados en el análisis y propuestas de soluciones de problemas actuales relacionados con la telemática, las telecomunicaciones y disciplinas afines.\n\nPuede interactuar con el Comité Organizador en la dirección de correo: cittel@tele.cujae.edu.cu.\n\nLa convocatoria está disponible en https://ccia.cujae.edu.cu/index.php/cittel/index''',
+                          style: const TextStyle(
+                            color: Colors.black,
+                            fontSize: 16,
+                          ),
+                          // textAlign: TextAlign.justify,
+                        ),
+                      ),
                     );
                   },
                   itemCount: 1,
@@ -117,304 +318,267 @@ class _HomePageState extends State<HomePage> {
                       height: 4,
                     );
                   },
-                );
-                setState(() {});
-                Navigator.of(context).pop();
-              },
+                ),
+              ),
             ),
-            ListTile(
-              leading: const Icon(Icons.account_tree),
-              title: const Text('Organizing Committee'),
-              onTap: () => {},
+          ),
+          Positioned(
+            top: size.height / 20,
+            left: 6.3 * size.width / 8,
+            child: SizedBox(
+              width: size.width / 5,
+              height: size.height / 20,
+              child: ElevatedButton(
+                onPressed: () {
+                  useEnglish = !useEnglish;
+                  setState(() {});
+                },
+                child: Text(useEnglish ? 'esp' : 'eng'),
+              ),
             ),
-            ListTile(
-              leading: const Icon(Icons.science),
-              title: const Text('Scientific Programs'),
-              onTap: () {
-                inMainMenu = false;
-                var tmp = getTasks(conferencias);
-                view = ListView.separated(
-                  padding: const EdgeInsets.only(
-                    top: 8,
-                  ),
-                  itemBuilder: (context, index) {
-                    return ScheduleWidget(
-                      task: tmp[index],
-                    );
-                  },
-                  itemCount: tmp.length,
-                  separatorBuilder: (context, index) {
-                    return const SizedBox(
-                      height: 4,
-                    );
-                  },
-                );
-                setState(() {});
-                Navigator.of(context).pop();
-              },
-            ),
-            ListTile(
-              leading: const Icon(Icons.airplay),
-              title: const Text('Master Conferences'),
-              onTap: () {
-                inMainMenu = false;
-                var tmp = getTasks(conferencias)
-                    .where((element) => element.type == 'master')
-                    .toList();
-                view = ListView.separated(
-                  padding: const EdgeInsets.only(
-                    top: 8,
-                  ),
-                  itemBuilder: (context, index) {
-                    return ScheduleWidget(
-                      task: tmp[index],
-                    );
-                  },
-                  itemCount: tmp.length,
-                  separatorBuilder: (context, index) {
-                    return const SizedBox(
-                      height: 4,
-                    );
-                  },
-                );
-                setState(() {});
-                Navigator.of(context).pop();
-              },
-            ),
-            ListTile(
-              leading: const Icon(Icons.architecture),
-              title: const Text('Courses and workshops'),
-              onTap: () {
-                inMainMenu = false;
-                var tmp = getTasks(conferencias)
-                    .where((element) =>
-                        element.type == 'workshop' || element.type == 'course')
-                    .toList();
-                view = ListView.separated(
-                  padding: const EdgeInsets.only(
-                    top: 8,
-                  ),
-                  itemBuilder: (context, index) {
-                    return ScheduleWidget(
-                      task: tmp[index],
-                    );
-                  },
-                  itemCount: tmp.length,
-                  separatorBuilder: (context, index) {
-                    return const SizedBox(
-                      height: 4,
-                    );
-                  },
-                );
-                setState(() {});
-                Navigator.of(context).pop();
-              },
-            ),
-            ListTile(
-              leading: const Icon(Icons.assistant),
-              title: const Text('Stand'),
-              onTap: () => {},
-            ),
-            ListTile(
-              leading: const Icon(Icons.people),
-              title: const Text('Lecturers'),
-              onTap: () {
-                inMainMenu = false;
+          ),
+        ];
+        break;
 
-                var tmp = getPersonaInfo(conferencistas);
-                view = ListView.separated(
+      case CurrentPage.committee:
+        // TODO
+        break;
+
+      case CurrentPage.program:
+        var program = getTasks(fullProgram)
+            .where((e) =>
+                filter == null ||
+                (e.startTime.day == filter?.day &&
+                    e.startTime.month == filter?.month))
+            .toList();
+
+        bodyChildren = [
+          Positioned(
+            top: 0,
+            left: 16,
+            child: Container(
+              width: size.width - 32,
+              height: size.height / 1.2,
+              decoration: const BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.horizontal(
+                  left: Radius.circular(10),
+                  right: Radius.circular(10),
+                ),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(8),
+                child: ListView.separated(
                   padding: const EdgeInsets.only(
                     top: 8,
                   ),
                   itemBuilder: (context, index) {
-                    return PersonaInfoWidget(
-                      info: tmp[index],
+                    return EventWidget(task: program[index]);
+                  },
+                  itemCount: program.length,
+                  separatorBuilder: (context, index) {
+                    return const SizedBox(
+                      height: 4,
+                    );
+                  },
+                ),
+              ),
+            ),
+          ),
+          Positioned(
+            top: 27 * size.height / 32,
+            left: size.width / 4,
+            child: SizedBox(
+              width: size.width / 2,
+              height: size.height / 20,
+              child: ElevatedButton(
+                onPressed: () {
+                  _selectDate(context);
+                },
+                child: Text(useEnglish ? "Filter" : "Filtrar"),
+              ),
+            ),
+          ),
+        ];
+        break;
+
+      case CurrentPage.conferences:
+        var program = getTasks(fullProgram)
+            .where((e) =>
+                (filter == null ||
+                    (e.startTime.day == filter?.day &&
+                        e.startTime.month == filter?.month)) &&
+                e.type == 'master')
+            .toList();
+
+        bodyChildren = [
+          Positioned(
+            top: 0,
+            left: 16,
+            child: Container(
+              width: size.width - 32,
+              height: size.height / 1.2,
+              decoration: const BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.horizontal(
+                  left: Radius.circular(10),
+                  right: Radius.circular(10),
+                ),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(8),
+                child: ListView.separated(
+                  padding: const EdgeInsets.only(
+                    top: 8,
+                  ),
+                  itemBuilder: (context, index) {
+                    return EventWidget(task: program[index]);
+                  },
+                  itemCount: program.length,
+                  separatorBuilder: (context, index) {
+                    return const SizedBox(
+                      height: 4,
+                    );
+                  },
+                ),
+              ),
+            ),
+          ),
+          Positioned(
+            top: 27 * size.height / 32,
+            left: size.width / 4,
+            child: SizedBox(
+              width: size.width / 2,
+              height: size.height / 20,
+              child: ElevatedButton(
+                onPressed: () {
+                  _selectDate(context);
+                },
+                child: Text(useEnglish ? "Filter" : "Filtrar"),
+              ),
+            ),
+          ),
+        ];
+        break;
+
+      case CurrentPage.workshops:
+        var program = getTasks(fullProgram)
+            .where((e) =>
+                (filter == null ||
+                    (e.startTime.day == filter?.day &&
+                        e.startTime.month == filter?.month)) &&
+                (e.type == 'workshop' || e.type == 'course'))
+            .toList();
+
+        bodyChildren = [
+          Positioned(
+            top: 0,
+            left: 16,
+            child: Container(
+              width: size.width - 32,
+              height: size.height / 1.2,
+              decoration: const BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.horizontal(
+                  left: Radius.circular(10),
+                  right: Radius.circular(10),
+                ),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(8),
+                child: ListView.separated(
+                  padding: const EdgeInsets.only(
+                    top: 8,
+                  ),
+                  itemBuilder: (context, index) {
+                    return EventWidget(task: program[index]);
+                  },
+                  itemCount: program.length,
+                  separatorBuilder: (context, index) {
+                    return const SizedBox(
+                      height: 4,
+                    );
+                  },
+                ),
+              ),
+            ),
+          ),
+          Positioned(
+            top: 27 * size.height / 32,
+            left: size.width / 4,
+            child: SizedBox(
+              width: size.width / 2,
+              height: size.height / 20,
+              child: ElevatedButton(
+                onPressed: () {
+                  _selectDate(context);
+                },
+                child: Text(useEnglish ? "Filter" : "Filtrar"),
+              ),
+            ),
+          ),
+        ];
+        break;
+
+      case CurrentPage.stands:
+        // TODO
+        break;
+
+      case CurrentPage.lecturers:
+        var speakers = getPersonaInfo(lecturers);
+
+        bodyChildren = [
+          Positioned(
+            top: 0,
+            left: 16,
+            child: Container(
+              width: size.width - 32,
+              height: size.height / 1.1,
+              decoration: const BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.horizontal(
+                  left: Radius.circular(10),
+                  right: Radius.circular(10),
+                ),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(8),
+                child: ListView.separated(
+                  padding: const EdgeInsets.only(
+                    top: 8,
+                  ),
+                  itemBuilder: (context, index) {
+                    return LecturerWidget(
+                      info: speakers[index],
                       useEnglish: useEnglish,
                     );
                   },
-                  itemCount: tmp.length,
+                  itemCount: speakers.length,
                   separatorBuilder: (context, index) {
                     return const SizedBox(
                       height: 4,
                     );
                   },
-                );
-
-                setState(() => {});
-                Navigator.of(context).pop();
-              },
+                ),
+              ),
             ),
-            ListTile(
-              leading: const Icon(Icons.info),
-              title: const Text('About'),
-              onTap: () {
-                inMainMenu = false;
+          ),
+        ];
+        break;
 
-                view = ListView.separated(
-                  padding: const EdgeInsets.only(
-                    top: 8,
-                  ),
-                  itemBuilder: (context, index) {
-                    return CreditsWidget(
-                      useEnglish: useEnglish,
-                    );
-                  },
-                  itemCount: 1,
-                  separatorBuilder: (context, index) {
-                    return const SizedBox(
-                      height: 4,
-                    );
-                  },
-                );
+      case CurrentPage.about:
+        // TODO
+        break;
+    }
 
-                setState(() => {});
-                Navigator.of(context).pop();
-              },
-            ),
-          ],
-        ),
-      ),
-      appBar: AppBar(
-        flexibleSpace: const Image(
-          image: AssetImage('assets/images/header.png'),
-          fit: BoxFit.fitHeight,
-        ),
-        backgroundColor: Colors.blue,
-      ),
+    return Scaffold(
+      appBar: appBar,
+      drawer: drawer,
       body: SizedBox(
         width: size.width,
         height: size.height,
         child: Stack(
-          children: [
-            Positioned(
-              child: Container(
-                width: size.width,
-                height: size.height / 4,
-                decoration: const BoxDecoration(
-                  image: DecorationImage(
-                    image: ExactAssetImage('assets/images/splash.png'),
-                    scale: 25,
-                  ),
-                  //borderRadius: BorderRadius.horizontal(left: Radius.circular(10), right: Radius.circular(10),),
-                  /*gradient: LinearGradient(
-                    colors: [
-                      Color(0xff8d70fe),
-                      Color(0xff2da9ef),
-                    ],
-                    begin: Alignment.centerRight,
-                    end: Alignment.centerLeft,
-                  ),*/
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: inMainMenu
-                      ? [
-                          ListTile(
-                            horizontalTitleGap: 12.5,
-                            contentPadding: const EdgeInsets.all(4),
-                            leading: Text(
-                              DateTime.now().day.toString(),
-                              style: const TextStyle(
-                                fontSize: 40,
-                                color: Colors.amber,
-                              ),
-                            ),
-                            title: Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(vertical: 3.0),
-                              child: Text(
-                                DateTime.now().month.toString(),
-                                style: const TextStyle(
-                                  fontSize: 13,
-                                  color: Colors.black,
-                                ),
-                              ),
-                            ),
-                            subtitle: Text(
-                              DateTime.now().year.toString(),
-                              style: const TextStyle(
-                                fontSize: 13,
-                                color: Colors.black,
-                              ),
-                            ),
-                          ),
-                        ]
-                      : [],
-                ),
-              ),
-            ),
-            Positioned(
-              top: inMainMenu ? (size.height / 3.8) : 0,
-              left: 16,
-              child: Container(
-                width: size.width - 32,
-                height: size.height / (inMainMenu ? 1.7 : 1.2),
-                decoration: const BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.horizontal(
-                    left: Radius.circular(10),
-                    right: Radius.circular(10),
-                  ),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(8),
-                  child: view,
-                ),
-              ),
-            ),
-            inMainMenu
-                ? Positioned(
-                    top: size.height / 20,
-                    left: 6.3 * size.width / 8,
-                    child: SizedBox(
-                      width: size.width / 5,
-                      height: size.height / 20,
-                      child: ElevatedButton(
-                        onPressed: () {
-                          useEnglish = !useEnglish;
-                          setState(() {
-                            view = ListView.separated(
-                              padding: const EdgeInsets.only(
-                                top: 8,
-                              ),
-                              itemBuilder: (context, index) {
-                                return AboutWidget(
-                                  useEnglish: useEnglish,
-                                );
-                              },
-                              itemCount: 1,
-                              separatorBuilder: (context, index) {
-                                return const SizedBox(
-                                  height: 4,
-                                );
-                              },
-                            );
-                          });
-                        },
-                        child: Text(useEnglish ? 'esp' : 'eng'),
-                      ),
-                    ))
-                : const Positioned(
-                    child: Text(''),
-                  ),
-            inMainMenu
-                ? Positioned(
-                    top: size.height / 6,
-                    left: 6.3 * size.width / 8,
-                    child: SizedBox(
-                      width: size.width / 5,
-                      height: size.height / 20,
-                      child: ElevatedButton(
-                        onPressed: () {
-                          _selectDate(context);
-                        },
-                        child: Text(useEnglish ? "Date" : "Fecha"),
-                      ),
-                    ))
-                : const Positioned(
-                    child: Text(''),
-                  ),
-          ],
+          children: bodyChildren,
         ),
       ),
     );
@@ -423,31 +587,14 @@ class _HomePageState extends State<HomePage> {
   _selectDate(BuildContext context) async {
     final DateTime? selected = await showDatePicker(
       context: context,
-      initialDate: filter,
+      initialDate: DateTime.now(),
       firstDate: DateTime(2010),
       lastDate: DateTime(2025),
     );
 
-    if (selected != null && selected != filter) {
+    if (selected != filter) {
       setState(() {
         filter = selected;
-        var filteredList = getTasks(conferencias)
-            .where((element) => element.taskTime.day == filter.day)
-            .toList();
-        view = ListView.separated(
-          padding: const EdgeInsets.only(
-            top: 8,
-          ),
-          itemBuilder: (context, index) {
-            return ScheduleWidget(task: filteredList[index]);
-          },
-          itemCount: filteredList.length,
-          separatorBuilder: (context, index) {
-            return const SizedBox(
-              height: 4,
-            );
-          },
-        );
       });
     }
   }
