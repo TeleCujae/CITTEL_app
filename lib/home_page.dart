@@ -18,7 +18,6 @@ enum CurrentPage {
   program,
   conferences,
   workshops,
-  stands,
   lecturers,
   about
 }
@@ -30,14 +29,15 @@ class _HomePageState extends State<HomePage> {
   DateTime? filter;
 
   late final Map<String, dynamic> lecturers;
+  late final Map<String, dynamic> organizingCommittee;
   late final List<dynamic> fullProgram;
 
-  loadJson(String path) async {
+  dynamic loadJson(String path) async {
     String data = await rootBundle.loadString(path);
     return json.decode(data);
   }
 
-  List<Event> getTasks(List<dynamic> data) {
+  List<Event> getEvents(List<dynamic> data) {
     List<Event> tasks = [];
 
     for (var e in data) {
@@ -67,7 +67,7 @@ class _HomePageState extends State<HomePage> {
     return tasks;
   }
 
-  List<Lecturer> getPersonaInfo(Map<String, dynamic> data) {
+  List<Lecturer> getLecturers(Map<String, dynamic> data) {
     List<Lecturer> infos = [];
 
     for (var e in data.entries) {
@@ -83,6 +83,21 @@ class _HomePageState extends State<HomePage> {
     return infos;
   }
 
+  List<Organizer> getOrganizers(Map<String, dynamic> data) {
+    List<Organizer> organizers = [];
+
+    for (var e in data.entries) {
+      organizers.add(
+        Organizer(
+          e.key,
+          useEnglish ? e.value['title']['en'] : e.value['title']['es'],
+        ),
+      );
+    }
+
+    return organizers;
+  }
+
   @override
   void initState() {
     super.initState();
@@ -90,6 +105,8 @@ class _HomePageState extends State<HomePage> {
 
     WidgetsBinding.instance.addPostFrameCallback((_) async {
       lecturers = await loadJson('assets/json/lecturers.json');
+      organizingCommittee =
+          await loadJson('assets/json/organizing_committee.json');
       fullProgram = await loadJson('assets/json/full_program.json');
     });
   }
@@ -121,7 +138,7 @@ class _HomePageState extends State<HomePage> {
           ),
           ListTile(
             leading: const Icon(Icons.home),
-            title: const Text('Home'),
+            title: Text(useEnglish ? 'Home' : 'Inicio'),
             onTap: () {
               setState(() {
                 page = CurrentPage.home;
@@ -131,7 +148,9 @@ class _HomePageState extends State<HomePage> {
           ),
           ListTile(
             leading: const Icon(Icons.account_tree),
-            title: const Text('Organizing Committee'),
+            title: Text(
+              useEnglish ? 'Organizing Committee' : 'Comité Organizativo',
+            ),
             onTap: () {
               setState(() {
                 page = CurrentPage.committee;
@@ -141,7 +160,9 @@ class _HomePageState extends State<HomePage> {
           ),
           ListTile(
             leading: const Icon(Icons.science),
-            title: const Text('Scientific Programs'),
+            title: Text(
+              useEnglish ? 'Scientific Programs' : 'Programa científico',
+            ),
             onTap: () {
               setState(() {
                 page = CurrentPage.program;
@@ -151,7 +172,9 @@ class _HomePageState extends State<HomePage> {
           ),
           ListTile(
             leading: const Icon(Icons.airplay),
-            title: const Text('Master Conferences'),
+            title: Text(
+              useEnglish ? 'Master Conferences' : 'Conferencias Magistrales',
+            ),
             onTap: () {
               setState(() {
                 page = CurrentPage.conferences;
@@ -161,7 +184,9 @@ class _HomePageState extends State<HomePage> {
           ),
           ListTile(
             leading: const Icon(Icons.architecture),
-            title: const Text('Courses and workshops'),
+            title: Text(
+              useEnglish ? 'Courses and workshops' : 'Cursos y Talleres',
+            ),
             onTap: () {
               setState(() {
                 page = CurrentPage.workshops;
@@ -170,18 +195,10 @@ class _HomePageState extends State<HomePage> {
             },
           ),
           ListTile(
-            leading: const Icon(Icons.assistant),
-            title: const Text('Stand'),
-            onTap: () {
-              setState(() {
-                page = CurrentPage.stands;
-              });
-              Navigator.of(context).pop();
-            },
-          ),
-          ListTile(
             leading: const Icon(Icons.people),
-            title: const Text('Lecturers'),
+            title: Text(
+              useEnglish ? 'Lecturers' : 'Conferencistas',
+            ),
             onTap: () {
               setState(() {
                 page = CurrentPage.lecturers;
@@ -191,7 +208,9 @@ class _HomePageState extends State<HomePage> {
           ),
           ListTile(
             leading: const Icon(Icons.info),
-            title: const Text('About'),
+            title: Text(
+              useEnglish ? 'About' : 'Acerca de',
+            ),
             onTap: () {
               setState(() {
                 page = CurrentPage.about;
@@ -337,11 +356,46 @@ class _HomePageState extends State<HomePage> {
         break;
 
       case CurrentPage.committee:
-        // TODO
+        var organizers = getOrganizers(organizingCommittee);
+
+        bodyChildren = [
+          Positioned(
+            top: 0,
+            left: 0,
+            child: Container(
+              width: size.width,
+              height: size.height / 1.1,
+              decoration: const BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.horizontal(
+                  left: Radius.circular(10),
+                  right: Radius.circular(10),
+                ),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(8),
+                child: ListView.separated(
+                  padding: const EdgeInsets.only(
+                    top: 8,
+                  ),
+                  itemBuilder: (context, index) {
+                    return OrganizerWidget(organizer: organizers[index]);
+                  },
+                  itemCount: organizers.length,
+                  separatorBuilder: (context, index) {
+                    return const SizedBox(
+                      height: 4,
+                    );
+                  },
+                ),
+              ),
+            ),
+          ),
+        ];
         break;
 
       case CurrentPage.program:
-        var program = getTasks(fullProgram)
+        var program = getEvents(fullProgram)
             .where((e) =>
                 filter == null ||
                 (e.startTime.day == filter?.day &&
@@ -399,7 +453,7 @@ class _HomePageState extends State<HomePage> {
         break;
 
       case CurrentPage.conferences:
-        var program = getTasks(fullProgram)
+        var program = getEvents(fullProgram)
             .where((e) =>
                 (filter == null ||
                     (e.startTime.day == filter?.day &&
@@ -458,7 +512,7 @@ class _HomePageState extends State<HomePage> {
         break;
 
       case CurrentPage.workshops:
-        var program = getTasks(fullProgram)
+        var program = getEvents(fullProgram)
             .where((e) =>
                 (filter == null ||
                     (e.startTime.day == filter?.day &&
@@ -516,12 +570,8 @@ class _HomePageState extends State<HomePage> {
         ];
         break;
 
-      case CurrentPage.stands:
-        // TODO
-        break;
-
       case CurrentPage.lecturers:
-        var speakers = getPersonaInfo(lecturers);
+        var speakers = getLecturers(lecturers);
 
         bodyChildren = [
           Positioned(
@@ -529,7 +579,7 @@ class _HomePageState extends State<HomePage> {
             left: 0,
             child: Container(
               width: size.width,
-              height: size.height / 1.2,
+              height: size.height / 1.1,
               decoration: const BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.horizontal(
@@ -546,7 +596,6 @@ class _HomePageState extends State<HomePage> {
                   itemBuilder: (context, index) {
                     return LecturerWidget(
                       info: speakers[index],
-                      useEnglish: useEnglish,
                     );
                   },
                   itemCount: speakers.length,
@@ -563,7 +612,86 @@ class _HomePageState extends State<HomePage> {
         break;
 
       case CurrentPage.about:
-        // TODO
+        bodyChildren = [
+          Positioned(
+            child: Container(
+              width: size.width,
+              height: size.height / 4,
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                  image: ExactAssetImage('assets/images/splash.png'),
+                  scale: 25,
+                ),
+              ),
+            ),
+          ),
+          Positioned(
+            top: size.height / 4.3,
+            left: 0,
+            child: Container(
+              width: size.width,
+              height: size.height / 1.45,
+              decoration: const BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.horizontal(
+                  left: Radius.circular(10),
+                  right: Radius.circular(10),
+                ),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(8),
+                child: ListView.separated(
+                  padding: const EdgeInsets.only(
+                    top: 8,
+                  ),
+                  itemBuilder: (context, index) {
+                    return Card(
+                      elevation: 8,
+                      shadowColor: const Color(0xff2da9ef),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(
+                          10,
+                        ),
+                      ),
+                      child: ListTile(
+                        contentPadding: const EdgeInsets.symmetric(
+                          vertical: 8,
+                          horizontal: 16,
+                        ),
+                        title: const Padding(
+                          padding: EdgeInsets.symmetric(vertical: 8.0),
+                          child: Text(
+                            'CITTEL APP',
+                            style: TextStyle(
+                              fontSize: 24,
+                              fontWeight: FontWeight.bold,
+                            ),
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                        subtitle: Text(
+                          useEnglish ? 'Made in Cujae' : 'Hecho en la Cujae',
+                          style: const TextStyle(
+                            color: Colors.black,
+                            fontSize: 16,
+                          ),
+                          textAlign: TextAlign.center,
+                          // textAlign: TextAlign.justify,
+                        ),
+                      ),
+                    );
+                  },
+                  itemCount: 1,
+                  separatorBuilder: (context, index) {
+                    return const SizedBox(
+                      height: 4,
+                    );
+                  },
+                ),
+              ),
+            ),
+          ),
+        ];
         break;
     }
 

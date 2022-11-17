@@ -25,3 +25,13 @@ class Lecturer {
     this.image,
   );
 }
+
+class Organizer {
+  final String name;
+  final String title;
+
+  Organizer(
+    this.name,
+    this.title,
+  );
+}

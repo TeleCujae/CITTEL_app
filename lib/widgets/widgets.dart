@@ -81,12 +81,10 @@ class EventWidget extends StatelessWidget {
 
 class LecturerWidget extends StatelessWidget {
   final Lecturer info;
-  final bool useEnglish;
 
   const LecturerWidget({
     Key? key,
     required this.info,
-    required this.useEnglish,
   }) : super(key: key);
 
   @override
@@ -124,7 +122,53 @@ class LecturerWidget extends StatelessWidget {
             color: Colors.black,
             fontSize: 16,
           ),
-          // textAlign: TextAlign.justify,
+        ),
+      ),
+    );
+  }
+}
+
+class OrganizerWidget extends StatelessWidget {
+  final Organizer organizer;
+
+  const OrganizerWidget({
+    Key? key,
+    required this.organizer,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      elevation: 8,
+      shadowColor: const Color(0xff2da9ef),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(
+          10,
+        ),
+      ),
+      child: ListTile(
+        contentPadding: const EdgeInsets.symmetric(
+          vertical: 8,
+          horizontal: 16,
+        ),
+        title: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 8.0),
+          child: Text(
+            organizer.name,
+            style: const TextStyle(
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
+            ),
+            textAlign: TextAlign.center,
+          ),
+        ),
+        subtitle: Text(
+          organizer.title,
+          style: const TextStyle(
+            color: Colors.black,
+            fontSize: 16,
+          ),
+          textAlign: TextAlign.center,
         ),
       ),
     );

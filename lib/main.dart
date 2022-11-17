@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:cittel_app/home_page.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const CittelApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class CittelApp extends StatelessWidget {
+  const CittelApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
