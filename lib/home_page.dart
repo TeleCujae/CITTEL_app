@@ -19,6 +19,7 @@ enum CurrentPage {
   conferences,
   workshops,
   lecturers,
+  sponsors,
   about
 }
 
@@ -207,6 +208,17 @@ class _HomePageState extends State<HomePage> {
             },
           ),
           ListTile(
+            leading: const Icon(Icons.add_chart),
+            title: Text(
+              useEnglish ? 'Sponsors' : 'Patrocinadores',
+            ),
+            onTap: () {
+              setState(() {
+                page = CurrentPage.sponsors;
+              });
+              Navigator.of(context).pop();
+            },
+          ),ListTile(
             leading: const Icon(Icons.info),
             title: Text(
               useEnglish ? 'About' : 'Acerca de',
@@ -604,6 +616,24 @@ class _HomePageState extends State<HomePage> {
                       height: 4,
                     );
                   },
+                ),
+              ),
+            ),
+          ),
+        ];
+        break;
+
+      case CurrentPage.sponsors:
+        bodyChildren = [
+          Positioned(
+            child: Container(
+              width: size.width,
+              height: size.height / 2,
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                  // TODO: use proper image
+                  image: ExactAssetImage('assets/images/splash.png'),
+                  fit: BoxFit.fitWidth,
                 ),
               ),
             ),
