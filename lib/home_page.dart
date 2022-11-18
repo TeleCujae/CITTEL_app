@@ -75,7 +75,7 @@ class _HomePageState extends State<HomePage> {
       infos.add(
         Lecturer(
           e.key,
-          useEnglish ? e.value['details']['es'] : e.value['details']['en'],
+          useEnglish ? e.value['details']['en'] : e.value['details']['es'],
           e.value['image'],
         ),
       );
@@ -117,9 +117,15 @@ class _HomePageState extends State<HomePage> {
     final size = MediaQuery.of(context).size;
 
     AppBar appBar = AppBar(
-      flexibleSpace: const Image(
-        image: AssetImage('assets/images/header.png'),
-        fit: BoxFit.fitHeight,
+      flexibleSpace: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            scale: 30,
+            image: AssetImage(
+              'assets/images/header.png',
+            ),
+          ),
+        ),
       ),
       backgroundColor: Colors.blue,
     );
@@ -133,6 +139,7 @@ class _HomePageState extends State<HomePage> {
               image: DecorationImage(
                 fit: BoxFit.scaleDown,
                 image: AssetImage('assets/images/header.png'),
+                scale: 20,
               ),
             ),
             child: null,
@@ -218,7 +225,8 @@ class _HomePageState extends State<HomePage> {
               });
               Navigator.of(context).pop();
             },
-          ),ListTile(
+          ),
+          ListTile(
             leading: const Icon(Icons.info),
             title: Text(
               useEnglish ? 'About' : 'Acerca de',
@@ -376,7 +384,7 @@ class _HomePageState extends State<HomePage> {
             left: 0,
             child: Container(
               width: size.width,
-              height: size.height / 1.1,
+              height: size.height / 1.11,
               decoration: const BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.horizontal(
@@ -591,7 +599,7 @@ class _HomePageState extends State<HomePage> {
             left: 0,
             child: Container(
               width: size.width,
-              height: size.height / 1.1,
+              height: size.height / 1.105,
               decoration: const BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.horizontal(
@@ -626,14 +634,16 @@ class _HomePageState extends State<HomePage> {
       case CurrentPage.sponsors:
         bodyChildren = [
           Positioned(
+            top: 0,
+            left: 0,
             child: Container(
-              alignment: Alignment.center,
-              width: size.width,
               height: size.height,
+              width: size.width - 10,
+              margin: const EdgeInsets.all(10),
               decoration: const BoxDecoration(
                 image: DecorationImage(
+                  alignment: Alignment.topCenter,
                   image: ExactAssetImage('assets/images/sponsors.png'),
-                  fit: BoxFit.fitWidth,
                 ),
               ),
             ),
