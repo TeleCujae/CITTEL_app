@@ -627,12 +627,12 @@ class _HomePageState extends State<HomePage> {
         bodyChildren = [
           Positioned(
             child: Container(
+              alignment: Alignment.center,
               width: size.width,
-              height: size.height / 2,
+              height: size.height,
               decoration: const BoxDecoration(
                 image: DecorationImage(
-                  // TODO: use proper image
-                  image: ExactAssetImage('assets/images/splash.png'),
+                  image: ExactAssetImage('assets/images/sponsors.png'),
                   fit: BoxFit.fitWidth,
                 ),
               ),
