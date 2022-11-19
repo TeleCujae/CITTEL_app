@@ -9,10 +9,10 @@
     "hour_to": 13,
     "min_to": 30,
     "title": {
-      "es": "Computación en la Nube, soluciones y proveedores",
-      "en": "Cloud computing, solutions and providers"
+      "es": "Curso: Computación en la Nube, soluciones y proveedores",
+      "en": "Course: Cloud computing, solutions and providers"
     },
-    "author": "Ph.D. Lilia Rosa García Perellada, Avangenio"
+    "author": "Ph.D. Lilia Rosa García Perellada, MiPYME Avangenio"
   },
   {
     "type": "other",
@@ -54,8 +54,8 @@
     "hour_to": 0,
     "min_to": 0,
     "title": {
-      "es": "Lugar: Sala de protocolos, Hotel Palco",
-      "en": "Place: Palco Hotel Protocol Room"
+      "es": "Sesión Científica\nLugar: Sala de protocolos, Hotel Palco",
+      "en": "Scientific Session\nPlace: Palco Hotel Protocol Room"
     },
     "author": "Ph.D. René Yáñez de la Rivera, CUJAE"
   },
@@ -69,8 +69,8 @@
     "hour_to": 10,
     "min_to": 25,
     "title": {
-      "es": "Computación de borde virtual 6G para fortalecer la resilencia de las redes",
-      "en": "6G Virtual Edge Computing for Enhanced Network Resilience"
+      "es": "Conferencia Magistral: Computación de borde virtual 6G para fortalecer la resilencia de las redes",
+      "en": "Keynote Speech: 6G Virtual Edge Computing for Enhanced Network Resilience"
     },
     "author": "Ph.D. Falko Dressler, Technical University Berlin"
   },
@@ -84,8 +84,8 @@
     "hour_to": 11,
     "min_to": 55,
     "title": {
-      "es": "Sistemas de Telecomunicaciones",
-      "en": "Telecommunications Systems"
+      "es": "Panel: Sistemas de Telecomunicaciones",
+      "en": "Panel: Telecommunications Systems"
     },
     "author": "Ph.D. Mónica Peña Casanova, UCI\nMSc. Liz Gámez Picó, CUJAE"
   },
@@ -99,8 +99,8 @@
     "hour_to": 11,
     "min_to": 55,
     "title": {
-      "es": "UN ENFOQUE GEOPOLÍTICO A LOS CONFLICTOS VINCULADOS CON LA REVOLUCIÓN DIGITAL",
-      "en": "A GEOPOLITICAL APPROACH TO THE CONFLICTS RELATED TO THE DIGITAL REVOLUTION"
+      "es": "Presentación: UN ENFOQUE GEOPOLÍTICO A LOS CONFLICTOS VINCULADOS CON LA REVOLUCIÓN DIGITAL",
+      "en": "Presentation: A GEOPOLITICAL APPROACH TO THE CONFLICTS RELATED TO THE DIGITAL REVOLUTION"
     },
     "author": "Margot François. Instituto Francés de Geopolítica (GEODE), Universidad Paris 8"
   },
@@ -114,8 +114,8 @@
     "hour_to": 11,
     "min_to": 55,
     "title": {
-      "es": "TECNOLOGÍAS 6G: REQUISITOS, DESAFÍOS Y APLICACIONES",
-      "en": "6G TECHNOLOGIES: REQUIREMENTS, CHALLENGES AND APPLICATIONS"
+      "es": "Presentación: TECNOLOGÍAS 6G: REQUISITOS, DESAFÍOS Y APLICACIONES",
+      "en": "Presentation: 6G TECHNOLOGIES: REQUIREMENTS, CHALLENGES AND APPLICATIONS"
     },
     "author": "Campos Calenga Pataca. Departamento de Electrónica y Electrotecnia de la FE - Universidade Agostinho Neto, e INTIC - Universidad de Luanda, Luanda"
   },
@@ -129,8 +129,8 @@
     "hour_to": 11,
     "min_to": 55,
     "title": {
-      "es": "SISTEMA AUTOMÁTICO DE INFORMACIÓN DE POSICIÓN CON PROTOCOLO DE COMUNICACIONES ORIENTADO A CONEXIÓN",
-      "en": "AUTOMATIC PACKET REPORTING SYSTEM WITH CONNECTION-ORIENTED COMMUNICATIONS PROTOCOL"
+      "es": "Presentación: SISTEMA AUTOMÁTICO DE INFORMACIÓN DE POSICIÓN CON PROTOCOLO DE COMUNICACIONES ORIENTADO A CONEXIÓN",
+      "en": "Presentation: AUTOMATIC PACKET REPORTING SYSTEM WITH CONNECTION-ORIENTED COMMUNICATIONS PROTOCOL"
     },
     "author": "Jorge Humberto Vázquez Leiva, Wilfredo Rafael Núñez Blanco, Alberto Feito Guerra, Claudia Margarita Martínez Mujica. \nCentro de Investigación y Desarrollo de Electrónica y Mecánica \"CID MECATRONICS\""
   },
@@ -144,8 +144,8 @@
     "hour_to": 11,
     "min_to": 55,
     "title": {
-      "es": "SISTEMA DE SEÑALIZACIÓN DIGITAL SOPORTADO EN ECOSISTEMA IOT",
-      "en": "DIGITAL SIGNAGE SYSTEM SUPPORTED IN IOT ECOSYSTEM"
+      "es": "Presentación: SISTEMA DE SEÑALIZACIÓN DIGITAL SOPORTADO EN ECOSISTEMA IOT",
+      "en": "Presentation: DIGITAL SIGNAGE SYSTEM SUPPORTED IN IOT ECOSYSTEM"
     },
     "author": "Guillermo Lastre Olazábal, Gilbert Rafael García Cabrera. CITMATEL"
   },
@@ -159,8 +159,8 @@
     "hour_to": 11,
     "min_to": 55,
     "title": {
-      "es": "IMPACTO DE LA CRIPTOGRAFÍA MODERNA EN LA CIBERSEGURIDAD DENTRO DE LA INFORMATIZACIÓN DE LA SOCIEDAD CUBANA",
-      "en": "IMPACT OF MODERN CRYPTOGRAPHY ON CYBERSECURITY WITHIN THE COMPUTERIZATION OF CUBAN SOCIETY"
+      "es": "Presentación: IMPACTO DE LA CRIPTOGRAFÍA MODERNA EN LA CIBERSEGURIDAD DENTRO DE LA INFORMATIZACIÓN DE LA SOCIEDAD CUBANA",
+      "en": "Presentation: IMPACT OF MODERN CRYPTOGRAPHY ON CYBERSECURITY WITHIN THE COMPUTERIZATION OF CUBAN SOCIETY"
     },
     "author": "Maytée Odette López Catalá, CDNT-ETECSA. Ph.D. Teresa Pagés López, UH"
   },
@@ -174,8 +174,8 @@
     "hour_to": 11,
     "min_to": 55,
     "title": {
-      "es": "ADAPTACIÓN DE LA CODIFICACIÓN CONJUNTA FUENTE-CANAL EN PRESENCIA DE PERDIDAS EN RÁFAGAS EN REDES INALÁMBRICAS",
-      "en": "ADAPTATION OF JOINT SOURCE-CHANNEL ENCODING IN WIRELESS NETWORKS"
+      "es": "Presentación: ADAPTACIÓN DE LA CODIFICACIÓN CONJUNTA FUENTE-CANAL EN PRESENCIA DE PERDIDAS EN RÁFAGAS EN REDES INALÁMBRICAS",
+      "en": "Presentation: ADAPTATION OF JOINT SOURCE-CHANNEL ENCODING IN WIRELESS NETWORKS"
     },
     "author": "Isis Ferrán Fernández, Eric Rojo Martín. ETECSA Villa Clara, Empresa Cubana de Navegación Aérea, ECNA Villa Clara."
   },
@@ -189,8 +189,8 @@
     "hour_to": 11,
     "min_to": 55,
     "title": {
-      "es": "GUÍA PARA EL DESPLIEGUE DE LA COMPUTACIÓN EN LA NIEBLA",
-      "en": "GUIDANCE FOR THE DEPLOYMENT OF FOG COMPUTING"
+      "es": "Presentación: GUÍA PARA EL DESPLIEGUE DE LA COMPUTACIÓN EN LA NIEBLA",
+      "en": "Presentation: GUIDANCE FOR THE DEPLOYMENT OF FOG COMPUTING"
     },
     "author": "Liz Gámez Picó, Caridad Anías Calderón, CUJAE."
   },
@@ -204,8 +204,8 @@
     "hour_to": 11,
     "min_to": 55,
     "title": {
-      "es": "PREDICCIÓN DE VIOLACIONES EN LOS SLA EN REDES DE NUEVA GENERACIÓN: UNA PROPUESTA",
-      "en": "PREDICTION OF SLA VIOLATIONS IN NEW GENERATION NETWORKS: A PROPOSAL"
+      "es": "Presentación: PREDICCIÓN DE VIOLACIONES EN LOS SLA EN REDES DE NUEVA GENERACIÓN: UNA PROPUESTA",
+      "en": "Presentation: PREDICTION OF SLA VIOLATIONS IN NEW GENERATION NETWORKS: A PROPOSAL"
     },
     "author": "Joan David González Franco, Raúl Rivera Rodríguez, Jorge Enrique Preciado Velasco, José Lozano Rizk.  Centro de Investigación Científica y de Educación Superior de Ensenada (CICESE)"
   },
@@ -219,8 +219,8 @@
     "hour_to": 12,
     "min_to": 55,
     "title": {
-      "es": "Habilitando el aprendizaje automático distribuido mediante topologías de red óptimas",
-      "en": "Enabling Distributed Machine Learning Through Optimal Network Topologies"
+      "es": "Conferencia Magistral: Habilitando el aprendizaje automático distribuido mediante topologías de red óptimas",
+      "en": "Keynote Speech: Enabling Distributed Machine Learning Through Optimal Network Topologies"
     },
     "author": "Ph.D. Carla Fabiana Chiasserini, Politecnico di Torino, Italy."
   },
@@ -234,8 +234,8 @@
     "hour_to": 14,
     "min_to": 0,
     "title": {
-      "es": "Procesamiento Digital de Señales",
-      "en": "Digital Signal Processing"
+      "es": "Panel: Procesamiento Digital de Señales",
+      "en": "Panel: Digital Signal Processing"
     },
     "author": "Ph.D. Camilo Guillén Soriano, CUJAE\nMSc. Fernando Hernández Vives, CUJAE"
   },
@@ -249,8 +249,8 @@
     "hour_to": 14,
     "min_to": 0,
     "title": {
-      "es": "SISTEMA DE ESTIMACIÓN DE LA DIRECCIÓN DE ARRIBO PARA UN RADIO COGNITIVO CONSCIENTE DE LA UBICACIÓN",
-      "en": "DIRECTION OF ARRIVAL ESTIMATING SYSTEM FOR A LOCATION-AWARE COGNITIVE RADIUS"
+      "es": "Presentación: SISTEMA DE ESTIMACIÓN DE LA DIRECCIÓN DE ARRIBO PARA UN RADIO COGNITIVO CONSCIENTE DE LA UBICACIÓN",
+      "en": "Presentation: DIRECTION OF ARRIVAL ESTIMATING SYSTEM FOR A LOCATION-AWARE COGNITIVE RADIUS"
     },
     "author": "Yunior Ibarra Guerra, Alexander R. Ramírez Zaldívar, Abel Hernández Violat, Noslen Rojas Ramírez. CID MECATRONICS"
   },
@@ -264,8 +264,8 @@
     "hour_to": 14,
     "min_to": 0,
     "title": {
-      "es": "SISTEMA IOT PARA EL MONITOREO DEL PROCESO DE CURADO DE TABACO CON TERMOHIGRÓMETRO MULTI-SONDA",
-      "en": "IOT SYSTEM FOR MONITORING THE TOBACCO CURING PROCESS WITH A MULTI-PROBE THERMO-HYGROMETER"
+      "es": "Presentación: SISTEMA IOT PARA EL MONITOREO DEL PROCESO DE CURADO DE TABACO CON TERMOHIGRÓMETRO MULTI-SONDA",
+      "en": "Presentation: IOT SYSTEM FOR MONITORING THE TOBACCO CURING PROCESS WITH A MULTI-PROBE THERMO-HYGROMETER"
     },
     "author": "Dioen Biosca Rojas, Ariel Baloira Reyes. CUJAE"
   },
@@ -279,8 +279,8 @@
     "hour_to": 14,
     "min_to": 0,
     "title": {
-      "es": "MÓDULO DE CAPTURA Y ALMACENAMIENTO EN TIEMPO REAL DE PARÁMETROS ASOCIADOS AL FUNCIONAMIENTO DE NODOS DE CÓMPUTO",
-      "en": "MODULE FOR REAL-TIME CAPTURE AND STORAGE OF PARAMETERS ASSOCIATED WITH THE OPERATION OF COMPUTE NODES"
+      "es": "Presentación: MÓDULO DE CAPTURA Y ALMACENAMIENTO EN TIEMPO REAL DE PARÁMETROS ASOCIADOS AL FUNCIONAMIENTO DE NODOS DE CÓMPUTO",
+      "en": "Presentation: MODULE FOR REAL-TIME CAPTURE AND STORAGE OF PARAMETERS ASSOCIATED WITH THE OPERATION OF COMPUTE NODES"
     },
     "author": "Daniel Rubén García Ávila, Omar Antonio Hernández Duany. CUJAE"
   },
@@ -294,8 +294,8 @@
     "hour_to": 14,
     "min_to": 0,
     "title": {
-      "es": "COBERTURA MÁXIMA DE RADAR DE BLANCOS NAVALES Y A BAJA ALTURA PARA EL ESTADO DEL MAR COMO PARÁMETRO",
-      "en": "MAXIMUN RADAR COVERAGE OF NAVAL AND LOW FLYING TARGETS FOR THE SEA STATE AS A PARAMETER. RADAR PREDICTION OF THE SEA STATE"
+      "es": "Presentación: COBERTURA MÁXIMA DE RADAR DE BLANCOS NAVALES Y A BAJA ALTURA PARA EL ESTADO DEL MAR COMO PARÁMETRO",
+      "en": "Presentation: MAXIMUN RADAR COVERAGE OF NAVAL AND LOW FLYING TARGETS FOR THE SEA STATE AS A PARAMETER. RADAR PREDICTION OF THE SEA STATE"
     },
     "author": "Nelson Chávez Ferry, Giorgia Rodríguez Almaguer, Lena Lizbet La Ó Ramirez, Dayron Manuel Santana García. CUJAE, Empresa Eléctrica de Matanzas y ETECSA"
   },
@@ -309,8 +309,8 @@
     "hour_to": 14,
     "min_to": 0,
     "title": {
-      "es": "IMPLEMENTACIÓN DE TRANSMISORES OFDM EN FPGA PARA REDES DE LA INDUSTRIA 4.0",
-      "en": "OFDM TRANSMITTER IMPLEMENTATION IN FPGA FOR INDUSTRY 4.0 NETWORKS"
+      "es": "Presentación: IMPLEMENTACIÓN DE TRANSMISORES OFDM EN FPGA PARA REDES DE LA INDUSTRIA 4.0",
+      "en": "Presentation: OFDM TRANSMITTER IMPLEMENTATION IN FPGA FOR INDUSTRY 4.0 NETWORKS"
     },
     "author": "Fernando Hernández Vives, Camilo Guillen Soriano, Jorge Luis González Rios, Jorge Torres Gómez. CUJAE, University of Luxembourg, TU Berlin"
   },
@@ -324,8 +324,8 @@
     "hour_to": 0,
     "min_to": 0,
     "title": {
-      "es": "Lugar: Sala de protocolos, Hotel Palco",
-      "en": "Place: Palco Hotel Protocol Room"
+      "es": "Sesión Científica\nLugar: Sala de protocolos, Hotel Palco",
+      "en": "Scientific Session\nPlace: Palco Hotel Protocol Room"
     },
     "author": "Ph.D. Caridad Anías Calderón, CUJAE"
   },
@@ -339,8 +339,8 @@
     "hour_to": 14,
     "min_to": 0,
     "title": {
-      "es": "Programa sectorial de Ciencia, Tecnología e innovación (PSCTI) de Telecomunicaciones del MINCOM",
-      "en": "Science, Technology and Innovation Sectorial Program (PSCTI) of Telecommunications of MINCOM"
+      "es": "Taller: Programa sectorial de Ciencia, Tecnología e innovación (PSCTI) de Telecomunicaciones del MINCOM",
+      "en": "Workshop: Science, Technology and Innovation Sectorial Program (PSCTI) of Telecommunications of MINCOM"
     },
     "author": "Ph.D. Caridad Anías Calderón. Head of the Telecommunications PSCTI. CUJAE\nEng. Gerardo de León Ojeda. Secretary of the Telecommunications PSCTI. ETECSA"
   },
@@ -369,8 +369,8 @@
     "hour_to": 9,
     "min_to": 55,
     "title": {
-      "es": "Intervención de la viceministra del MINCOM y del director de desarrollo tecnológico del MINCOM",
-      "en": "Speech by the Vice Minister of MINCOM and the Director of Technological Development of MINCOM"
+      "es": "Presentación: Intervención de la viceministra del MINCOM y del director de desarrollo tecnológico del MINCOM",
+      "en": "Presentation: Speech by the Vice Minister of MINCOM and the Director of Technological Development of MINCOM"
     },
     "author": "MSc. Grisel Reyes León, MSc. Yoandy Lazo Alvarado"
   },
@@ -384,8 +384,8 @@
     "hour_to": 11,
     "min_to": 25,
     "title": {
-      "es": "Experiencias de los proyectos del PSCTI, resultados obtenidos",
-      "en": "Experiences of PSCTI projects, results obtained"
+      "es": "Panel: Experiencias de los proyectos del PSCTI, resultados obtenidos",
+      "en": "Panel: Experiences of PSCTI projects, results obtained"
     },
     "author": "Ph.D. Caridad Anías Calderón. Head of the Telecommunications PSCTI. CUJA, Eng. Gerardo de León Ojeda. Secretary of the Telecommunications PSCTI. ETECSA"
   },
@@ -399,8 +399,8 @@
     "hour_to": 11,
     "min_to": 25,
     "title": {
-      "es": "Sistema para la predicción y alerta de interrupción a las comunicaciones por anomalías en las condiciones de propagación",
-      "en": "System for the prediction and warning of communications interruption due to anomalies in propagation conditions"
+      "es": "Proyecto: Sistema para la predicción y alerta de interrupción a las comunicaciones por anomalías en las condiciones de propagación",
+      "en": "Project: System for the prediction and warning of communications interruption due to anomalies in propagation conditions"
     },
     "author": "Dr.C. Lanyer Pérez Garlobo, ITM"
   },
@@ -414,10 +414,10 @@
     "hour_to": 11,
     "min_to": 25,
     "title": {
-      "es": "Comercio electrónico potenciado con tecnologías emergentes (CELTEM)",
-      "en": "E-commerce enhanced with emerging technologies (CELTEM)"
+      "es": "Proyecto: Comercio electrónico potenciado con tecnologías emergentes (CELTEM)",
+      "en": "Project: E-commerce enhanced with emerging technologies (CELTEM)"
     },
-    "author": "Dr.C. Andrés Subert Semanat, UO"
+    "author": "Ph.D. Andrés Subert Semanat, UO"
   },
   {
     "type": "project",
@@ -429,10 +429,10 @@
     "hour_to": 11,
     "min_to": 25,
     "title": {
-      "es": "Desarrollo y pruebas de Funciones de Red Virtual (VNF) empleando plataformas de código abierto",
-      "en": "Development and testing of Virtual Network Functions (VNF) employing open source platforms"
+      "es": "Proyecto: Desarrollo y pruebas de Funciones de Red Virtual (VNF) empleando plataformas de código abierto",
+      "en": "Project: Development and testing of Virtual Network Functions (VNF) employing open source platforms"
     },
-    "author": "Dr.C. Alain Garófalo Hernández, MiPyME Avangenio"
+    "author": "Ph.D. Alain Garófalo Hernández, MiPyME Avangenio"
   },
   {
     "type": "project",
@@ -444,8 +444,8 @@
     "hour_to": 11,
     "min_to": 25,
     "title": {
-      "es": "Creación de Capacidades para Proyecto de Optimización de Redes Inalámbricas mediante Inteligencia Artificial",
-      "en": "Capacity Building for Wireless Network Optimization Project using Artificial Intelligence"
+      "es": "Proyecto: Creación de Capacidades para Proyecto de Optimización de Redes Inalámbricas mediante Inteligencia Artificial",
+      "en": "Project: Capacity Building for Wireless Network Optimization Project using Artificial Intelligence"
     },
     "author": "MSc. Alejandro González García, LACETEL"
   },
@@ -459,10 +459,10 @@
     "hour_to": 11,
     "min_to": 25,
     "title": {
-      "es": "Modelo para la gestión de infraestructuras de Tecnologías de la Información",
-      "en": "Model for the management of Information Technology infrastructures"
+      "es": "Proyecto: Modelo para la gestión de infraestructuras de Tecnologías de la Información",
+      "en": "Project: Model for the management of Information Technology infrastructures"
     },
-    "author": "Dra.C. Mónica Peña Casanova, UCI"
+    "author": "Ph.D. Mónica Peña Casanova, UCI"
   },
   {
     "type": "project",
@@ -474,10 +474,10 @@
     "hour_to": 11,
     "min_to": 25,
     "title": {
-      "es": "Solución de IoT para el soporte de la Agricultura de precisión y automatización de salas blancas del Centro Nacional para la Producción de Animales de Laboratorio (CENPALAB)",
-      "en": "IoT solution to support precision agriculture and clean room automation at the National Center for Laboratory Animal Production (CENPALAB)"
+      "es": "Proyecto: Solución de IoT para el soporte de la Agricultura de precisión y automatización de salas blancas del Centro Nacional para la Producción de Animales de Laboratorio (CENPALAB)",
+      "en": "Project: IoT solution to support precision agriculture and clean room automation at the National Center for Laboratory Animal Production (CENPALAB)"
     },
-    "author": "Ing. Barbara Garcia Rosell, ETECSA"
+    "author": "Eng. Barbara Garcia Rosell, ETECSA"
   },
   {
     "type": "presentation",
@@ -489,8 +489,8 @@
     "hour_to": 12,
     "min_to": 25,
     "title": {
-      "es": "Experiencias en la gestión del PSCTI de Telecomunicaciones",
-      "en": "Experiences in the management of the Telecommunications PSCTI"
+      "es": "Presentación: Experiencias en la gestión del PSCTI de Telecomunicaciones",
+      "en": "Presentation: Experiences in the management of the Telecommunications PSCTI"
     },
     "author": "Ph.D. Caridad Anías Calderón. Head of the Telecommunications PSCTI. CUJAE"
   },
@@ -504,8 +504,8 @@
     "hour_to": 13,
     "min_to": 25,
     "title": {
-      "es": "Convocatoria a nuevos proyectos para el Programa",
-      "en": "Call for new projects for the Program"
+      "es": "Presentación: Convocatoria a nuevos proyectos para el Programa",
+      "en": "Presentation: Call for new projects for the Program"
     },
     "author": "Ph.D. Caridad Anías Calderón. Head of the Telecommunications PSCTI. CUJAE"
   },
@@ -534,8 +534,8 @@
     "hour_to": 0,
     "min_to": 0,
     "title": {
-      "es": "Lugar: Sala de protocolos, Hotel Palco",
-      "en": "Place: Palco Hotel Protocol Room"
+      "es": "Sesión Científica\nLugar: Sala de protocolos, Hotel Palco",
+      "en": "Scientific Session\nPlace: Palco Hotel Protocol Room"
     },
     "author": "Ph.D. Caridad Anías Calderón, CUJAE"
   },
@@ -549,8 +549,8 @@
     "hour_to": 14,
     "min_to": 0,
     "title": {
-      "es": "Posgrado, pregrado e investigación en la carrera de Ingeniería en Telecomunicaciones y Electrónica",
-      "en": "Postgraduate, undergraduate and research in Telecommunications and Electronics Engineering"
+      "es": "Taller: Posgrado, pregrado e investigación en la carrera de Ingeniería en Telecomunicaciones y Electrónica",
+      "en": "Workshop: Postgraduate, undergraduate and research in Telecommunications and Electronics Engineering"
     },
     "author": "Ph.D. Caridad Anías Calderón. President of the National Commission of the Telecommunications and Electronics Engineering Degree Program. CUJAE\nMSc. Leslye Villar Ledo. Secretary of the National Commission of the Telecommunications and Electronics Engineering Degree Program. ETECSA"
   },
@@ -579,8 +579,8 @@
     "hour_to": 9,
     "min_to": 55,
     "title": {
-      "es": "Experiencias en la relación de la formación de pregrado, master y doctores con los proyectos de investigación",
-      "en": "Experiences in the relationship of undergraduate, master's and doctoral training with research projects"
+      "es": "Conferencia: Experiencias en la relación de la formación de pregrado, master y doctores con los proyectos de investigación",
+      "en": "Conference: Experiences in the relationship of undergraduate, master's and doctoral training with research projects"
     },
     "author": "Ph.D. Fidel Hernández Montero. Vice-Dean of Research and Graduate Studies, School of Telecommunications and Electronics Engineering. CUJAE"
   },
@@ -594,8 +594,8 @@
     "hour_to": 10,
     "min_to": 25,
     "title": {
-      "es": "La Ciencia Abierta y su impacto en las publicaciones científicas",
-      "en": "Open Science and its impact on scientific publications"
+      "es": "Conferencia: La Ciencia Abierta y su impacto en las publicaciones científicas",
+      "en": "Conference: Open Science and its impact on scientific publications"
     },
     "author": "Ph.D. Jorge Gulín-González. Director of the Center for Computational Mathematics Studies (CEMC), UCI, and Editor-in-Chief of the Cuban Journal of Computer Science. UCI"
   },
@@ -624,8 +624,8 @@
     "hour_to": 13,
     "min_to": 30,
     "title": {
-      "es": "Plan de estudio E y su continuidad en el posgrado",
-      "en": "Curriculum E and its continuity into graduate school"
+      "es": "Tema: Plan de estudio E y su continuidad en el posgrado",
+      "en": "Topic: Curriculum E and its continuity into graduate school"
     },
     "author": ""
   },
@@ -639,8 +639,8 @@
     "hour_to": 13,
     "min_to": 30,
     "title": {
-      "es": "Vínculo del pregrado y el posgrado con la investigación científica",
-      "en": "Link between undergraduate and graduate studies and scientific research"
+      "es": "Tema: Vínculo del pregrado y el posgrado con la investigación científica",
+      "en": "Topic: Link between undergraduate and graduate studies and scientific research"
     },
     "author": ""
   },
@@ -654,8 +654,8 @@
     "hour_to": 13,
     "min_to": 30,
     "title": {
-      "es": "Importancia de los proyectos de investigación (empresariales, territoriales, sectoriales y nacionales) en la formación de pregrado y posgrado",
-      "en": "Importance of research projects (business, territorial, sectorial and national) in undergraduate and graduate education"
+      "es": "Tema: Importancia de los proyectos de investigación (empresariales, territoriales, sectoriales y nacionales) en la formación de pregrado y posgrado",
+      "en": "Topic: Importance of research projects (business, territorial, sectorial and national) in undergraduate and graduate education"
     },
     "author": ""
   },
@@ -669,8 +669,8 @@
     "hour_to": 13,
     "min_to": 30,
     "title": {
-      "es": "Relación Universidad Empresa como impulso al pregrado, el posgrado y la investigación",
-      "en": "University-Enterprise relationship as an impulse to undergraduate, graduate and research"
+      "es": "Tema: Relación Universidad Empresa como impulso al pregrado, el posgrado y la investigación",
+      "en": "Topic: University-Enterprise relationship as an impulse to undergraduate, graduate and research"
     },
     "author": ""
   },
@@ -684,8 +684,8 @@
     "hour_to": 13,
     "min_to": 30,
     "title": {
-      "es": "Papel de las publicaciones científicas en la investigación y en la formación de pregrado y posgrado",
-      "en": "Role of scientific publications in research and undergraduate and graduate education"
+      "es": "Tema: Papel de las publicaciones científicas en la investigación y en la formación de pregrado y posgrado",
+      "en": "Topic: Role of scientific publications in research and undergraduate and graduate education"
     },
     "author": ""
   },
@@ -714,8 +714,8 @@
     "hour_to": 0,
     "min_to": 0,
     "title": {
-      "es": "Lugar: Sala de protocolos, Hotel Palco",
-      "en": "Place: Palco Hotel Protocol Room"
+      "es": "Sesión Científica\nLugar: Sala de protocolos, Hotel Palco",
+      "en": "Scientific Session\nPlace: Palco Hotel Protocol Room"
     },
     "author": "Ph.D. Nelson Chávez Ferry, CUJAE"
   },
@@ -729,8 +729,8 @@
     "hour_to": 9,
     "min_to": 55,
     "title": {
-      "es": "NFV, ¿a dónde vamos ahora?",
-      "en": "NFV, where to go next?"
+      "es": "Conferencia Magistral: NFV, ¿a dónde vamos ahora?",
+      "en": "Keynote Speech: NFV, where to go next?"
     },
     "author": "Ph.D. Alain A. Garófalo Hernández. MiPyME Avangenio"
   },
@@ -744,8 +744,8 @@
     "hour_to": 10,
     "min_to": 55,
     "title": {
-      "es": "Sistemas de Radiocomunicaciones (1)",
-      "en": "Radiocommunication Systems (1)"
+      "es": "Panel: Sistemas de Radiocomunicaciones (1)",
+      "en": "Panel: Radiocommunication Systems (1)"
     },
     "author": "Ph.D. Miguel Eduardo Borrego Corona, ETIE\nPh.D. Alexis Manuel Cristobo Brooks, CUJAE"
   },
@@ -759,8 +759,8 @@
     "hour_to": 10,
     "min_to": 55,
     "title": {
-      "es": "ANÁLISIS DE COBERTURA EN SISTEMAS DE VIDEO VIGILANCIA INALÁMBRICOS IEEE 802.11 B/G/N",
-      "en": "COVERAGE ANALYSIS IN WIRELESS VIDEO SURVEILLANCE SYSTEMS IEEE 802.11 B/G/N"
+      "es": "Presentación: ANÁLISIS DE COBERTURA EN SISTEMAS DE VIDEO VIGILANCIA INALÁMBRICOS IEEE 802.11 B/G/N",
+      "en": "Presentation: COVERAGE ANALYSIS IN WIRELESS VIDEO SURVEILLANCE SYSTEMS IEEE 802.11 B/G/N"
     },
     "author": "Fidel Martínez Armas, Taimir Alain Morales Roche, Miguel Eduardo Borrego Corona, Grettell Rodríguez Trujillo. CUJAE"
   },
@@ -774,8 +774,8 @@
     "hour_to": 10,
     "min_to": 55,
     "title": {
-      "es": "DISEÑO DE DESFASADORES CON METAMATERIALES PARA ANTENAS INTELIGENTES USADAS EN LA 5TA GENERACIÓN MÓVIL",
-      "en": "DESIGN OF PHASE SHIFTERS WITH METAMATERIALS FOR SMART ANTENNAS USED IN THE 5TH MOBILE GENERATION"
+      "es": "Presentación: DISEÑO DE DESFASADORES CON METAMATERIALES PARA ANTENAS INTELIGENTES USADAS EN LA 5TA GENERACIÓN MÓVIL",
+      "en": "Presentation: DESIGN OF PHASE SHIFTERS WITH METAMATERIALS FOR SMART ANTENNAS USED IN THE 5TH MOBILE GENERATION"
     },
     "author": "Miguel Eduardo Borrego Corona, Daimy J. Cabrera Brito, Grettel Rodríguez Trujillo, Fransisco Marante Rizo. CUJAE"
   },
@@ -789,8 +789,8 @@
     "hour_to": 10,
     "min_to": 55,
     "title": {
-      "es": "IMPACTO DEL PARÁMETRO RADIOMETEOROLÓGICO INTENSIDAD DE PRECIPITACIONES SOBRE LOS SISTEMAS 5G EN LAS CONDICIONES PARTICULARES DE CUBA",
-      "en": "IMPACT OF THE RAINFALL INTENSITY RADIOMETEOROLOGICAL PARAMETER ON 5G SYSTEMS IN THE PARTICULAR CONDITIONS OF CUBA"
+      "es": "Presentación: IMPACTO DEL PARÁMETRO RADIOMETEOROLÓGICO INTENSIDAD DE PRECIPITACIONES SOBRE LOS SISTEMAS 5G EN LAS CONDICIONES PARTICULARES DE CUBA",
+      "en": "Presentation: IMPACT OF THE RAINFALL INTENSITY RADIOMETEOROLOGICAL PARAMETER ON 5G SYSTEMS IN THE PARTICULAR CONDITIONS OF CUBA"
     },
     "author": "Vladimir Conde Williams, Lanyer Pérez Garlobo, José Luis Fuentes Lorenzo. Escuela Interarmas de las FAR, ITM, ETECSA"
   },
@@ -804,8 +804,8 @@
     "hour_to": 10,
     "min_to": 55,
     "title": {
-      "es": "SIMULACIÓN A NIVEL DE SISTEMA DE UN ESCENARIO URBANO 5G DESARROLLADO EN MATLAB",
-      "en": "SYSTEM-LEVEL SIMULATION OF A 5G URBAN SCENARIO DEVELOPED IN MATLAB"
+      "es": "Presentación: SIMULACIÓN A NIVEL DE SISTEMA DE UN ESCENARIO URBANO 5G DESARROLLADO EN MATLAB",
+      "en": "Presentation: SYSTEM-LEVEL SIMULATION OF A 5G URBAN SCENARIO DEVELOPED IN MATLAB"
     },
     "author": "Adrian Rodríguez Lau, Francisco R. Marante Rizo, Taimir Alain Morales Roche. CUJAE"
   },
@@ -819,8 +819,8 @@
     "hour_to": 10,
     "min_to": 55,
     "title": {
-      "es": "SISTEMA DE ALIMENTACIÓN CON TECNOLOGÍA GAP WAVEGUIDE PARA ANTENAS DE 5G",
-      "en": "POWER SUPPLY SYSTEM WITH GAP WAVEGUIDE TECHNOLOGY FOR 5G ANTENNAS"
+      "es": "Presentación: SISTEMA DE ALIMENTACIÓN CON TECNOLOGÍA GAP WAVEGUIDE PARA ANTENAS DE 5G",
+      "en": "Presentation: POWER SUPPLY SYSTEM WITH GAP WAVEGUIDE TECHNOLOGY FOR 5G ANTENNAS"
     },
     "author": "Taimir Alain Morales Roche, Fidel Martínez Armas, Michel Enrique Guerra Bernal, Francisco Marante Rizo. CUJAE"
   },
@@ -834,8 +834,8 @@
     "hour_to": 10,
     "min_to": 55,
     "title": {
-      "es": "CAMBIO DE PARADIGMA EN LA ENSEÑANZA Y LA INVESTIGACIÓN EN LA MATERIA DISEÑO DE ANTENAS Y CIRCUITOS DE RF",
-      "en": "PARADIGM SHIFT IN EDUCATION AND RESEARCH IN THE SUBJECT DESIGN OF ANTENNAS AND RF CIRCUITS"
+      "es": "Presentación: CAMBIO DE PARADIGMA EN LA ENSEÑANZA Y LA INVESTIGACIÓN EN LA MATERIA DISEÑO DE ANTENAS Y CIRCUITOS DE RF",
+      "en": "Presentation: PARADIGM SHIFT IN EDUCATION AND RESEARCH IN THE SUBJECT DESIGN OF ANTENNAS AND RF CIRCUITS"
     },
     "author": "Benigno Rodríguez Díaz, Leonardo Barboni Morales, Ana Arobleya Arboleya, Raúl Hans Hartmam Basaistegui. Facultad de Ingeniería, Universidad de la República de Uruguay"
   },
@@ -849,8 +849,8 @@
     "hour_to": 10,
     "min_to": 55,
     "title": {
-      "es": "DISEÑO DE CURSOS EN MODALIDAD HÍBRIDA PARA LA FORMACIÓN DE INGENIEROS DE CURSO POR ENCUENTROS",
-      "en": "HYBRID MODALITY CURSES DESIGN FOR ENGINEERS FORMATION IN CURSES BY MEETINGS"
+      "es": "Presentación: DISEÑO DE CURSOS EN MODALIDAD HÍBRIDA PARA LA FORMACIÓN DE INGENIEROS DE CURSO POR ENCUENTROS",
+      "en": "Presentation: HYBRID MODALITY CURSES DESIGN FOR ENGINEERS FORMATION IN CURSES BY MEETINGS"
     },
     "author": "Marcos A Gil Oloriz, Ileana Moreno Campdesuñer, Erik Otriz Guerra, Juan C Oliva Pérez. UCLV"
   },
@@ -864,8 +864,8 @@
     "hour_to": 11,
     "min_to": 55,
     "title": {
-      "es": "Intensificación de la gestión del espectro radioeléctrico: reto y necesidad",
-      "en": "Intensification of radio spectrum management: challenge and necessity"
+      "es": "Conferencia Magistral: Intensificación de la gestión del espectro radioeléctrico: reto y necesidad",
+      "en": "Keynote Speech: Intensification of radio spectrum management: challenge and necessity"
     },
     "author": "Ph.D. Enildo Sánchez Rodríguez, Scientific Institution Director"
   },
@@ -879,8 +879,8 @@
     "hour_to": 13,
     "min_to": 0,
     "title": {
-      "es": "Sistemas de Radiocomunicaciones (2)",
-      "en": "Radiocommunication Systems (2)"
+      "es": "Panel: Sistemas de Radiocomunicaciones (2)",
+      "en": "Panel: Radiocommunication Systems (2)"
     },
     "author": "Ph.D. Francisco R. Marante Rizo, Taimir Alain Morales Roche. CUJAE"
   },
@@ -894,8 +894,8 @@
     "hour_to": 13,
     "min_to": 0,
     "title": {
-      "es": "ANTENA PARA BEAMFORMING EN REDES 802.11 AD/AY EN 60 GHZ",
-      "en": "BEAMFORMING ANTENNA FOR 802.11AD/AY NETWORKS IN 60 GHZ"
+      "es": "Presentación: ANTENA PARA BEAMFORMING EN REDES 802.11 AD/AY EN 60 GHZ",
+      "en": "Presentation: BEAMFORMING ANTENNA FOR 802.11AD/AY NETWORKS IN 60 GHZ"
     },
     "author": "Raúl Hans Hartmam Basaistegui, Mauricio González Nappa, Juan Pablo González Rivero, Benigno Rodríguez Díaz. Facultad de Ingeniería, Universidad de la República de Uruguay"
   },
@@ -909,8 +909,8 @@
     "hour_to": 13,
     "min_to": 0,
     "title": {
-      "es": "PROCEDIMIENTO PARA EL CONFORMADO DEL PATRÓN DE RADIACIÓN DE ANTENAS CILINDRO - PARABÓLICAS PARA LA EXPLORACIÓN DE LA SUPERFICIE DEL MAR",
-      "en": "PROCEDURE FOR THE CONFORMATION OF THE RADIATION PATTERN OF CYLINDER-PARABOLIC ANTENNAS FOR THE EXPLORATION OF THE SEA SURFACE"
+      "es": "Presentación: PROCEDIMIENTO PARA EL CONFORMADO DEL PATRÓN DE RADIACIÓN DE ANTENAS CILINDRO - PARABÓLICAS PARA LA EXPLORACIÓN DE LA SUPERFICIE DEL MAR",
+      "en": "Presentation: PROCEDURE FOR THE CONFORMATION OF THE RADIATION PATTERN OF CYLINDER-PARABOLIC ANTENNAS FOR THE EXPLORATION OF THE SEA SURFACE"
     },
     "author": "Pedro Arzola Morris, Daryl Ortega González. CUJAE"
   },
@@ -924,8 +924,8 @@
     "hour_to": 13,
     "min_to": 0,
     "title": {
-      "es": "DISEÑO DE UN A-SMGCS EN EL AEROPUERTO INTERNACIONAL JOSÉ MARTÍ",
-      "en": "DESIGN OF AN A-SMGCS AT JOSÉ MARTÍ INTERNATIONAL AIRPORT"
+      "es": "Presentación: DISEÑO DE UN A-SMGCS EN EL AEROPUERTO INTERNACIONAL JOSÉ MARTÍ",
+      "en": "Presentation: DESIGN OF AN A-SMGCS AT JOSÉ MARTÍ INTERNATIONAL AIRPORT"
     },
     "author": "Shirley Robert Castillo, José Armando Rodríguez Rojas, Liban Tellez Casas. Empresa Cubana de Navegación Aérea (ECNA)"
   },
@@ -939,8 +939,8 @@
     "hour_to": 13,
     "min_to": 0,
     "title": {
-      "es": "INFLUENCIA DE LA ESTRUCTURA ESPACIAL DE UN SISTEMA TDOA EN EL ERROR DE LOCALIZACIÓN",
-      "en": "NFLUENCE OF THE SPATIAL STRUCTURE OF A TDOA SYSTEM ON THE LOCATION ERROR"
+      "es": "Presentación: INFLUENCIA DE LA ESTRUCTURA ESPACIAL DE UN SISTEMA TDOA EN EL ERROR DE LOCALIZACIÓN",
+      "en": "Presentation: NFLUENCE OF THE SPATIAL STRUCTURE OF A TDOA SYSTEM ON THE LOCATION ERROR"
     },
     "author": "Maykel Peña Arias, Gustavo García Corrales. ITM"
   },
@@ -954,8 +954,8 @@
     "hour_to": 13,
     "min_to": 0,
     "title": {
-      "es": "DISEÑO, SIMULACIÓN Y CONSTRUCCIÓN DE AMPLIFICADOR DE POTENCIA 20-700MHZ Y 40W CON HEMT",
-      "en": "DESIGN, SIMULATION AND CONSTRUCTION OF POWER AMPLIFIERS OF 20-700MHZ AND 40W WITH GAN HEMT"
+      "es": "Presentación: DISEÑO, SIMULACIÓN Y CONSTRUCCIÓN DE AMPLIFICADOR DE POTENCIA 20-700MHZ Y 40W CON HEMT",
+      "en": "Presentation: DESIGN, SIMULATION AND CONSTRUCTION OF POWER AMPLIFIERS OF 20-700MHZ AND 40W WITH GAN HEMT"
     },
     "author": "Yosvany González Mandado, Pedro Luis Hernández Portilla, Enrique Romero Mustelie. CIDP \"Grito de Baire\""
   },
@@ -969,8 +969,8 @@
     "hour_to": 13,
     "min_to": 0,
     "title": {
-      "es": "FUNDAMENTACIÓN DEL EMPLEO DE LA RED MÓVIL PARA LA DETECCIÓN DE DUCTOS TROPOSFÉRICOS",
-      "en": "FOUNDATION OF THE USE OF THE MOBILE NETWORK FOR TROPOSPHERIC DUCTING DETECTION"
+      "es": "Presentación: FUNDAMENTACIÓN DEL EMPLEO DE LA RED MÓVIL PARA LA DETECCIÓN DE DUCTOS TROPOSFÉRICOS",
+      "en": "Presentation: FOUNDATION OF THE USE OF THE MOBILE NETWORK FOR TROPOSPHERIC DUCTING DETECTION"
     },
     "author": "Ana Julia Marine López, Lányer Pérez Garlobo, Yoandri Marín González, José Rafael Sandianes Gálvez, Jesús Ferreiro Brito, Alain León Ruiz, Alain Rodríguez Tacoronte. MINCOM, ITM, CUJAE, UPTCER, ETECSA"
   },
@@ -984,8 +984,8 @@
     "hour_to": 13,
     "min_to": 0,
     "title": {
-      "es": "ADAPTACIÓN DE UN REFLECTOR PARABÓLICO “OFFSET” CON POLARIZACIÓN LINEAL A CIRCULAR",
-      "en": "ADAPTATION OF A PARABOLIC REFLECTOR OFFSET WITH LINEAR POLARIZATION TO CIRCULATE"
+      "es": "Presentación: ADAPTACIÓN DE UN REFLECTOR PARABÓLICO “OFFSET” CON POLARIZACIÓN LINEAL A CIRCULAR",
+      "en": "Presentation: ADAPTATION OF A PARABOLIC REFLECTOR OFFSET WITH LINEAR POLARIZATION TO CIRCULATE"
     },
     "author": "Patricia Marín González, José Rafael Sandianes Gálvez, Roger Ernesto García Frómeta. CUJAE, ETECSA"
   },
@@ -999,8 +999,8 @@
     "hour_to": 13,
     "min_to": 0,
     "title": {
-      "es": "DISEÑO DE UN SISTEMA DE AUMENTACIÓN SATELITAL GBAS/GRAS PARA LA FIR HABANA",
-      "en": "DESIGN OF A GBAS/GRAS SATELLITE AUGMENTATION SYSTEM FOR THE HAVANA FIR"
+      "es": "Presentación: DISEÑO DE UN SISTEMA DE AUMENTACIÓN SATELITAL GBAS/GRAS PARA LA FIR HABANA",
+      "en": "Presentation: DESIGN OF A GBAS/GRAS SATELLITE AUGMENTATION SYSTEM FOR THE HAVANA FIR"
     },
     "author": "Liban Tellez Casas, José Armando Rodríguez Rojas. Empresa Cubana de Navegación Aérea (ECNA)"
   },

@@ -710,7 +710,7 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ),
                         subtitle: Text(
-                          useEnglish ? 'Made in Cujae' : 'Hecho en la Cujae',
+                          useEnglish ? 'Made by the Department of TI at the Faculty of Telecommunications and Electronics Engineering of CUJAE.\n\nJulio Cesar Galindo Hevia\nDeveloper\n\nEng. Ariel Baloira Reyes\nEng. Annia L. Barbán Acea\nDesign and collaboration\n\n\nContact us for suggestions\n\nhttps://teleportal.cujae.edu.cu' : 'Realizado por el Dpto. de Informática de la Facultad de Ingeniería en Telecomunicaciones y Electrónica de la CUJAE.\n\nJulio Cesar Galindo Hevia\nDesarrollador\n\nIng. Ariel Baloira Reyes\nIng. Annia L. Barbán Acea\nDiseño y colaboración\n\n\nPóngase en contacto con nosotros para sugerencias\n\nhttps://teleportal.cujae.edu.cu',
                           style: const TextStyle(
                             color: Colors.black,
                             fontSize: 16,
