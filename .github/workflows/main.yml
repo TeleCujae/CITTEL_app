@@ -22,3 +22,12 @@ jobs:
 
       - name: Install dependencies and build
         run: flutter pub get && flutter build apk --release
+
+  release-on-push:
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: rymndhng/release-on-push-action@master
+        with:
+          bump_version_scheme: minor
