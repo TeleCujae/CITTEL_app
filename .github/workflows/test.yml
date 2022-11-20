@@ -1,0 +1,77 @@
+name: Flutter CI
+on:
+  push:
+    branches: [ master ]
+    tags:
+      - '*'
+
+# This workflow is triggered on pushes to the repository.
+
+jobs:
+  build_release:
+    # This job will run on ubuntu virtual machine
+    name: build_release
+    runs-on: ubuntu-latest
+    steps:
+    
+      # Setup Java environment in order to build the Android app.
+      - uses: actions/checkout@v1
+
+      - name: Get next version
+        uses: reecetech/version-increment@2022.10.3
+        id: version
+        with:
+          scheme: semver
+          increment: patch
+
+      - uses: actions/setup-java@v1
+        with:
+          java-version: '12.x'
+    
+      # Setup the flutter environment.
+      - uses: subosito/flutter-action@v1
+        with:
+          channel: 'beta' # 'dev', 'alpha', default to: 'stable'
+          # flutter-version: '1.12.x' # you can also specify exact version of flutter
+    
+      # Get flutter dependencies.
+      - run: flutter pub get
+    
+      # Check for any formatting issues in the code.
+      #- run: flutter format --set-exit-if-changed .
+    
+      # Statically analyze the Dart code for any errors.
+      - run: flutter analyze .
+    
+      # Run widget tests for our flutter project.
+      #- run: flutter test
+    
+      # Build apk.
+      - run: flutter build apk
+
+      - uses: actions/upload-artifact@v1
+        with:
+          name: cittel.apk
+          path: build/app/outputs/apk/release/app-release.apk
+
+      - name: release
+        uses: actions/create-release@v1
+        id: create_release
+        with:
+          draft: false
+          prerelease: false
+          release_name: ${{ steps.version.outputs.version }}
+          tag_name: ${{ github.ref }}
+          body: CHANGES
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+    
+      - name: upload linux artifact
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: build/app/outputs/apk/release/app-release.apk
+          asset_name: cittel.apk
+          asset_content_type: application/gzip
