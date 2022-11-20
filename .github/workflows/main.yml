@@ -61,7 +61,7 @@ jobs:
           draft: false
           prerelease: false
           release_name: "v${{ steps.version.outputs.version }}"
-          tag_name: ${{ github.ref }}
+          tag_name: ${{ github.ref }}/${{ steps.version.outputs.version }}
           body: CHANGES
         env:
           GITHUB_TOKEN: ${{ github.token }}
