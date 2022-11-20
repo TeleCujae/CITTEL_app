@@ -1,18 +1,29 @@
-name: Flutter CI
+name: CITTEL APP CI
 on:
   push:
     branches: [ master ]
+    tags:
+      - '*'
 
 # This workflow is triggered on pushes to the repository.
 
 jobs:
-  build:
+  build_release:
     # This job will run on ubuntu virtual machine
+    name: build_release
     runs-on: ubuntu-latest
     steps:
     
       # Setup Java environment in order to build the Android app.
       - uses: actions/checkout@v1
+
+      - name: Get next version
+        uses: reecetech/version-increment@2022.10.3
+        id: version
+        with:
+          scheme: semver
+          increment: patch
+
       - uses: actions/setup-java@v1
         with:
           java-version: '12.x'
@@ -49,7 +60,7 @@ jobs:
         with:
           draft: false
           prerelease: false
-          release_name: ${{ steps.version.outputs.version }}
+          release_name: "v${{ steps.version.outputs.version }}"
           tag_name: ${{ github.ref }}
           body: CHANGES
         env:
