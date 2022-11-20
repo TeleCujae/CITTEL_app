@@ -1,4 +1,4 @@
-# cittel_app
+# CITTEL APP
 
 The International Congress of Telematics and Telecommunications (CITTEL) is an event developed by the Faculty of Telecommunications and Electronic Engineering of the Technological University of Havana José Antonio Echeverría, CUJAE. It is aimed at specialists, officials, scientists and students of the national and international community interested in the analysis and proposals of current problems related to telematics, telecommunications and related disciplines.
 
