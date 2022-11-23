@@ -4,19 +4,25 @@ def keystorePropertiesFile = rootProject.file('key.properties')
 if (keystorePropertiesFile.exists()) {
     keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
 }
-
-signingConfigs {
-    release {
-        //From decoded key
-        storeFile = file('key.jks')
+android {
+    signingConfigs {
+        release {
+            //From decoded key
+            storeFile = file('key.jks')
             
-        //From key.properties
-        keyAlias keystoreProperties['keyAlias']
-        keyPassword keystoreProperties['keyPassword']
-        storePassword keystoreProperties['storePassword']
+            //From key.properties
+            keyAlias keystoreProperties['keyAlias']
+            keyPassword keystoreProperties['keyPassword']
+            storePassword keystoreProperties['storePassword']
+        }
     }
+    buildTypes {
+       release {
+           signingConfig signingConfigs.release
+       }
+   }
 }
-    
+
 buildscript {
     ext.kotlin_version = '1.7.10'
     repositories {
