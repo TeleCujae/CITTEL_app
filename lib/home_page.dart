@@ -1,7 +1,7 @@
 import 'dart:convert';
 
-import 'package:cittel_app/models/models.dart';
-import 'package:cittel_app/widgets/widgets.dart';
+import 'package:cittel/models/models.dart';
+import 'package:cittel/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 

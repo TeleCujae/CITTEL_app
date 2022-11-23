@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:cittel_app/home_page.dart';
+import 'package:cittel/home_page.dart';
 
 void main() {
   runApp(const CittelApp());

@@ -1,6 +1,6 @@
 {
-    "name": "cittel_app",
-    "short_name": "cittel_app",
+    "name": "cittel",
+    "short_name": "cittel",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
