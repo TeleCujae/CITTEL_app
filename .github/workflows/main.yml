@@ -48,8 +48,9 @@ jobs:
       - run: echo "${{ secrets.KEYSTORE2 }}" | base64 --decode > android/app/key.jks
 
       # Get flutter dependencies.
-      - run: flutter pub get
-          #flutter build appbundle
+      - run: |
+          flutter pub get
+          flutter build appbundle
     
       # Check for any formatting issues in the code.
       #- run: flutter format --set-exit-if-changed .
@@ -61,7 +62,7 @@ jobs:
       #- run: flutter test
     
       # Build apk.
-      - run: flutter build apk --no-shrink
+      - run: flutter build apk #--no-shrink
 
       - uses: actions/upload-artifact@v1
         with:
