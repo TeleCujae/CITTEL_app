@@ -6,8 +6,12 @@ on:
       - '*'
 
 # This workflow is triggered on pushes to the repository.
+env:
+  FLUTTER_CHANNEL: "stable"
+  PROPERTIES_PATH: "./android/key.properties"
 
 jobs:
+
   build_release:
     # This job will run on ubuntu virtual machine
     name: build_release
@@ -31,11 +35,22 @@ jobs:
       # Setup the flutter environment.
       - uses: subosito/flutter-action@v1
         with:
-          channel: 'beta' # 'dev', 'alpha', default to: 'stable'
+          channel: ${{env.FLUTTER_CHANNEL}} # 'dev', 'alpha', default to: 'stable'
           # flutter-version: '1.12.x' # you can also specify exact version of flutter
-    
+      
+      # Creating the key.properties file
+      - run: |
+          echo keyPassword=\${{ secrets.KEY_STORE }} > ${{env.PROPERTIES_PATH}}
+          echo storePassword=\${{ secrets.KEY_PASSWORD }} >> ${{env.PROPERTIES_PATH}}
+          echo keyAlias=\${{ secrets.KEY_ALIAS }} >> ${{env.PROPERTIES_PATH}}
+
+      # Decoding base64 key into a file
+      - run: echo "${{ secrets.KEYSTORE2 }}" | base64 --decode > android/app/key.jks
+
       # Get flutter dependencies.
-      - run: flutter pub get
+      - run: |
+          flutter pub get
+          flutter build appbundle
     
       # Check for any formatting issues in the code.
       #- run: flutter format --set-exit-if-changed .
