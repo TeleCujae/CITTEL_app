@@ -1,59 +1,31 @@
-//apply plugin: 'com.android.application'
+buildscript {
+    ext.kotlin_version = '1.7.10'
+    repositories {
+        google()
+        mavenCentral()
+    }
 
-// For import the keystore
-def keystoreProperties = new Properties()
-def keystorePropertiesFile = rootProject.file('key.properties')
-if (keystorePropertiesFile.exists()) {
-    keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.2.0'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
 }
 
-android {
-    signingConfigs {
-        release {
-            //From decoded key
-            storeFile = file('key.jks')
-            
-            //From key.properties
-            keyAlias keystoreProperties['keyAlias']
-            keyPassword keystoreProperties['keyPassword']
-            storePassword keystoreProperties['storePassword']
-        }
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
     }
-    buildTypes {
-       release {
-           signingConfig signingConfigs.release
-       }
-   }
+}
 
-    buildscript {
-        ext.kotlin_version = '1.7.10'
-        repositories {
-            google()
-            mavenCentral()
-        }
+rootProject.buildDir = '../build'
+subprojects {
+    project.buildDir = "${rootProject.buildDir}/${project.name}"
+}
+subprojects {
+    project.evaluationDependsOn(':app')
+}
 
-        dependencies {
-            classpath 'com.android.tools.build:gradle:7.2.0'
-            classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-        }
-    }
-
-    allprojects {
-        repositories {
-            google()
-            mavenCentral()
-        }
-    }
-
-    rootProject.buildDir = '../build'
-    subprojects {
-        project.buildDir = "${rootProject.buildDir}/${project.name}"
-    }
-    subprojects {
-        project.evaluationDependsOn(':app')
-    }
-
-    task clean(type: Delete) {
-        delete rootProject.buildDir
-    }
+task clean(type: Delete) {
+    delete rootProject.buildDir
 }
