@@ -1,9 +1,12 @@
+apply plugin: 'com.android.application'
+
 // For import the keystore
 def keystoreProperties = new Properties()
 def keystorePropertiesFile = rootProject.file('key.properties')
 if (keystorePropertiesFile.exists()) {
     keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
 }
+
 android {
     signingConfigs {
         release {
