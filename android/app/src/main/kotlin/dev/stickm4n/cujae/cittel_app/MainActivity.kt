@@ -1,4 +1,4 @@
-package dev.stickm4n.cujae.cittel_app
+package cu.telecujae.cittel
 
 import io.flutter.embedding.android.FlutterActivity
 
