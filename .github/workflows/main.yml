@@ -19,7 +19,7 @@ jobs:
     steps:
     
       # Setup Java environment in order to build the Android app.
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v4
 
       - name: Get next version
         uses: reecetech/version-increment@2022.10.3
@@ -28,12 +28,12 @@ jobs:
           scheme: semver
           increment: patch
 
-      - uses: actions/setup-java@v1
+      - uses: actions/setup-java@v4
         with:
           java-version: '12.x'
     
       # Setup the flutter environment.
-      - uses: subosito/flutter-action@v1
+      - uses: subosito/flutter-action@v4
         with:
           channel: ${{env.FLUTTER_CHANNEL}} # 'dev', 'alpha', default to: 'stable'
           # flutter-version: '1.12.x' # you can also specify exact version of flutter
@@ -64,13 +64,13 @@ jobs:
       # Build apk.
       - run: flutter build apk
 
-      - uses: actions/upload-artifact@v1
+      - uses: actions/upload-artifact@v4
         with:
           name: "cittel_v${{ steps.version.outputs.version }}.apk"
           path: build/app/outputs/apk/release/app-release.apk
 
       - name: release
-        uses: actions/create-release@v1
+        uses: actions/create-release@v4
         id: create_release
         with:
           draft: false
@@ -82,7 +82,7 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
     
       - name: upload linux artifact
-        uses: actions/upload-release-asset@v1
+        uses: actions/upload-release-asset@v4
         env:
           GITHUB_TOKEN: ${{ github.token }}
         with:
