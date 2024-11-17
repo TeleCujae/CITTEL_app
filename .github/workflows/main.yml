@@ -30,7 +30,8 @@ jobs:
 
       - uses: actions/setup-java@v4
         with:
-          java-version: '12.x'
+          distribution: 'temurin'
+          java-version: '21'
     
       # Setup the flutter environment.
       - uses: subosito/flutter-action@v1
