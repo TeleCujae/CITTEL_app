@@ -34,7 +34,7 @@ jobs:
       - uses: subosito/flutter-action@v2
         with:
           channel: ${{env.FLUTTER_CHANNEL}} # 'dev', 'alpha', default to: 'stable'
-          flutter-version: '3.19.0' # you can also specify exact version of flutter
+          #flutter-version: '3.19.0' # you can also specify exact version of flutter
       
       # Creating the key.properties file
       - run: |
