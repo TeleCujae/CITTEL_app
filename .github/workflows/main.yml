@@ -7,7 +7,7 @@ on:
 
 # This workflow is triggered on pushes to the repository.
 env:
-  FLUTTER_CHANNEL: "beta"
+  FLUTTER_CHANNEL: "stable" # or: beta, master (or main)
   PROPERTIES_PATH: "./android/key.properties"
 
 jobs:
