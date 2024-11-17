@@ -1,17 +1,23 @@
 {
+  "Camilo Guillén Soriano, Ph.D.": {
+    "title":{
+      "es":"Presidenta del Comité Organizador",
+      "en":"President of the Organizing Committee"
+    }
+  },
   "Caridad Anías Calderón, Ph.D.": {
     "title": {
-      "es": "Presidenta del Comité Organizador",
-      "en": "President of the Organizing Committee"
+      "es": "Presidenta de Honor",
+      "en": "President of Honor"
     }
   },
   "Pablo Montejo Valdés, Ph.D.": {
     "title": {
-      "es": "Decano de la FITE",
-      "en": "FITE Dean"
+      "es": "Decano de la Facultad de Telecomunicaciones y Electrónica",
+      "en": "Dean of the Faculty of Telecommunications and Electronics"
     }
   },
-  "MSc. Daryl Ortega González": {
+  "Ariel Baloira Reyes": {
     "title": {
       "es": "Secretario Ejecutivo",
       "en": "Executive Secretary"
@@ -23,16 +29,16 @@
       "en": "Scientific Committee President"
     }
   },
-  "Eng. Annia Lisbeth Barbán Acea": {
+  "Annia Lisbeth Barbán Acea": {
     "title": {
       "es": "Promoción y Comunicación",
       "en": "Promotion and Communication"
     }
   },
-  "Eng. Ariel Baloira Reyes": {
+  "Reinaldo Gerardo Elosegui Chappotin": {
     "title": {
-      "es": "Infraestructura y Soporte",
-      "en": "Support and Infrastructure"
+      "es": "Logística y Aseguramiento",
+      "en": "Logistics and Assurance"
     }
   },
   "Edith Carmona Ibáñez": {

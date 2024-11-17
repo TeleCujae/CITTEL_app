@@ -99,12 +99,13 @@ class LecturerWidget extends StatelessWidget {
       ),
       child: ListTile(
         leading: CircleAvatar(
+          radius: 20,
           foregroundImage:
-              ExactAssetImage('assets/images/profile/${info.image}'),
+              ExactAssetImage('images/profile/${info.image}'),
         ),
         contentPadding: const EdgeInsets.symmetric(
           vertical: 8,
-          horizontal: 16,
+          horizontal: 18,
         ),
         title: Padding(
           padding: const EdgeInsets.symmetric(vertical: 8.0),

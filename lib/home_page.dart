@@ -105,10 +105,10 @@ class _HomePageState extends State<HomePage> {
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
 
     WidgetsBinding.instance.addPostFrameCallback((_) async {
-      lecturers = await loadJson('assets/json/lecturers.json');
+      lecturers = await loadJson('json/lecturers.json');
       organizingCommittee =
-          await loadJson('assets/json/organizing_committee.json');
-      fullProgram = await loadJson('assets/json/full_program.json');
+          await loadJson('json/organizing_committee.json');
+      fullProgram = await loadJson('json/full_program.json');
     });
   }
 
@@ -122,7 +122,7 @@ class _HomePageState extends State<HomePage> {
           image: DecorationImage(
             scale: 25,
             image: AssetImage(
-              'assets/images/header.png',
+              'images/header.png',
             ),
           ),
         ),
@@ -138,7 +138,7 @@ class _HomePageState extends State<HomePage> {
               color: Colors.blue,
               image: DecorationImage(
                 fit: BoxFit.scaleDown,
-                image: AssetImage('assets/images/header.png'),
+                image: AssetImage('images/header.png'),
                 scale: 20,
               ),
             ),
@@ -247,15 +247,16 @@ class _HomePageState extends State<HomePage> {
       case CurrentPage.home:
         bodyChildren = [
           Positioned(
-            child: Container(
+            child: SizedBox(
               width: size.width,
-              height: size.height / 4,
-              decoration: const BoxDecoration(
-                image: DecorationImage(
-                  image: ExactAssetImage('assets/images/splash.png'),
-                  scale: 25,
-                ),
-              ),
+              height: size.height / 10,
+              /*child: DecoratedBox(
+                decoration: const BoxDecoration(
+                  image: DecorationImage(
+                    image: ExactAssetImage('images/splash.png'),
+                    scale: 2,
+                  ),
+                ),*/
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
@@ -289,10 +290,11 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ],
               ),
+              ),
             ),
-          ),
+          /*),*/
           Positioned(
-            top: size.height / 4.3,
+            top: size.height / 8.3,
             left: 0,
             child: Container(
               width: size.width,
@@ -324,23 +326,15 @@ class _HomePageState extends State<HomePage> {
                           vertical: 8,
                           horizontal: 16,
                         ),
-                        title: const Padding(
-                          padding: EdgeInsets.symmetric(vertical: 8.0),
-                          child: Text(
-                            'CITTEL',
-                            style: TextStyle(
-                              fontSize: 24,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ),
                         subtitle: Text(
                           useEnglish
-                              ? '''The International Congress on Telematics and Telecommunications (CITTEL) is an event developed by the School of Telecommunications and Electronics Engineering. It is aimed at specialists, officials, scientists and students from the national and international community interested in analyzing and proposing solutions to current problems related to telematics, telecommunications and related disciplines.\n\nYou can interact with the Organizing Committee at the following e-mail address: cittel@tele.cujae.edu.cu.\n\nThe call for papers is available at https://ccia.cujae.edu.cu/index.php/cittel/index.'''
-                              : '''El Congreso Internacional de Telemática y Telecomunicaciones (CITTEL) es un evento desarrollado por la Facultad de Ingeniería en Telecomunicaciones y Electrónica. Está dirigido a especialistas, funcionarios, científicos y estudiantes de la comunidad nacional e internacional interesados en el análisis y propuestas de soluciones de problemas actuales relacionados con la telemática, las telecomunicaciones y disciplinas afines.\n\nPuede interactuar con el Comité Organizador en la dirección de correo: cittel@tele.cujae.edu.cu.\n\nLa convocatoria está disponible en https://ccia.cujae.edu.cu/index.php/cittel/index''',
+                              ? '''The International Congress on Telematics and Telecommunications (CITTEL) is an event developed by the School of Telecommunications and Electronics Engineering. It is aimed at specialists, officials, scientists and students from the national and international community interested in analyzing and proposing solutions to current problems related to telematics, telecommunications and related disciplines.\n\nYou can interact with the Organizing Committee at the following e-mail address: cittel@tele.cujae.edu.cu.\n\nThe call for papers is available at https://ccia.cujae.edu.cu/index.php/cittel.'''
+                              : '''El Congreso Internacional de Telemática y Telecomunicaciones (CITTEL) es un evento desarrollado por la Facultad de Ingeniería en Telecomunicaciones y Electrónica. Está dirigido a especialistas, funcionarios, científicos y estudiantes de la comunidad nacional e internacional interesados en el análisis y propuestas de soluciones de problemas actuales relacionados con la telemática, las telecomunicaciones y disciplinas afines.\n\nPuede interactuar con el Comité Organizador en la dirección de correo: cittel@tele.cujae.edu.cu.\n\nLa convocatoria está disponible en https://ccia.cujae.edu.cu/index.php/cittel.''',
+                          textAlign: TextAlign.justify,
                           style: const TextStyle(
                             color: Colors.black,
                             fontSize: 16,
+                            
                           ),
                           // textAlign: TextAlign.justify,
                         ),
@@ -643,7 +637,7 @@ class _HomePageState extends State<HomePage> {
               decoration: const BoxDecoration(
                 image: DecorationImage(
                   alignment: Alignment.topCenter,
-                  image: ExactAssetImage('assets/images/sponsors.png'),
+                  image: ExactAssetImage('images/sponsors.png'),
                 ),
               ),
             ),
@@ -653,20 +647,20 @@ class _HomePageState extends State<HomePage> {
 
       case CurrentPage.about:
         bodyChildren = [
-          Positioned(
+          /*Positioned(
             child: Container(
               width: size.width,
               height: size.height / 4,
               decoration: const BoxDecoration(
                 image: DecorationImage(
-                  image: ExactAssetImage('assets/images/splash.png'),
+                  image: ExactAssetImage('images/splash.png'),
                   scale: 25,
                 ),
               ),
             ),
-          ),
+          ),*/
           Positioned(
-            top: size.height / 4.3,
+            //top: size.height / 8.3,
             left: 0,
             child: Container(
               width: size.width,
@@ -697,17 +691,6 @@ class _HomePageState extends State<HomePage> {
                         contentPadding: const EdgeInsets.symmetric(
                           vertical: 8,
                           horizontal: 16,
-                        ),
-                        title: const Padding(
-                          padding: EdgeInsets.symmetric(vertical: 8.0),
-                          child: Text(
-                            'CITTEL APP',
-                            style: TextStyle(
-                              fontSize: 24,
-                              fontWeight: FontWeight.bold,
-                            ),
-                            textAlign: TextAlign.center,
-                          ),
                         ),
                         subtitle: Text(
                           useEnglish ? 'Made by the Department of TI at the Faculty of Telecommunications and Electronics Engineering of CUJAE.\n\nJulio Cesar Galindo Hevia\nDeveloper\n\nEng. Ariel Baloira Reyes\nEng. Annia L. Barbán Acea\nDesign and collaboration\n\n\nContact us for suggestions\n\nhttps://teleportal.cujae.edu.cu' : 'Realizado por el Dpto. de Informática de la Facultad de Ingeniería en Telecomunicaciones y Electrónica de la CUJAE.\n\nJulio Cesar Galindo Hevia\nDesarrollador\n\nIng. Ariel Baloira Reyes\nIng. Annia L. Barbán Acea\nDiseño y colaboración\n\n\nPóngase en contacto con nosotros para sugerencias\n\nhttps://teleportal.cujae.edu.cu',
