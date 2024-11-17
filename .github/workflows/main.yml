@@ -11,16 +11,13 @@ env:
   PROPERTIES_PATH: "./android/key.properties"
 
 jobs:
-
   build_release:
     # This job will run on ubuntu virtual machine
     name: build_release
     runs-on: ubuntu-latest
     steps:
-    
       # Setup Java environment in order to build the Android app.
       - uses: actions/checkout@v4
-
       - name: Get next version
         uses: reecetech/version-increment@2022.10.3
         id: version
@@ -34,10 +31,10 @@ jobs:
           java-version: '21'
     
       # Setup the flutter environment.
-      - uses: subosito/flutter-action@v1
+      - uses: subosito/flutter-action@v2
         with:
           channel: ${{env.FLUTTER_CHANNEL}} # 'dev', 'alpha', default to: 'stable'
-          # flutter-version: '1.12.x' # you can also specify exact version of flutter
+          flutter-version: '3.19.0' # you can also specify exact version of flutter
       
       # Creating the key.properties file
       - run: |
