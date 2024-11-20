@@ -1,4 +1,4 @@
-name: CITTEL APP CI
+name: CITTEL APP Build
 on:
   push:
     branches: [ master ]
@@ -12,14 +12,15 @@ env:
 
 jobs:
   build_release:
-    # This job will run on ubuntu virtual machine
     name: build_release
     runs-on: ubuntu-latest
     steps:
       # Setup Java environment in order to build the Android app.
-      - uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
+
       - name: Get next version
-        uses: reecetech/version-increment@2022.10.3
+        uses: reecetech/version-increment@2024.10.1
         id: version
         with:
           scheme: semver
@@ -29,8 +30,7 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '23'
-    
-      # Setup the flutter environment.
+        
       - uses: subosito/flutter-action@v2
         with:
           channel: ${{env.FLUTTER_CHANNEL}} # 'dev', 'alpha', default to: 'stable'
@@ -49,16 +49,10 @@ jobs:
       - run: |
           flutter pub get
           flutter build appbundle
-    
-      # Check for any formatting issues in the code.
-      #- run: flutter format --set-exit-if-changed .
-    
+
       # Statically analyze the Dart code for any errors.
       - run: flutter analyze .
-    
-      # Run widget tests for our flutter project.
-      #- run: flutter test
-    
+
       # Build apk.
       - run: flutter build apk
 
@@ -78,7 +72,7 @@ jobs:
           body_path: CHANGES.md
         env:
           GITHUB_TOKEN: ${{ github.token }}
-    
+
       - name: upload linux artifact
         uses: actions/upload-release-asset@v1
         env:
@@ -88,3 +82,4 @@ jobs:
           asset_path: build/app/outputs/apk/release/app-release.apk
           asset_name: "cittel_v${{ steps.version.outputs.version }}.apk"
           asset_content_type: application/gzip
+  
