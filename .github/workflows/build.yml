@@ -1,0 +1,85 @@
+name: CITTEL APP Build
+on:
+  push:
+    branches: [ master ]
+    tags:
+      - '*'
+
+# This workflow is triggered on pushes to the repository.
+env:
+  FLUTTER_CHANNEL: "stable" # or: beta, master (or main)
+  PROPERTIES_PATH: "./android/key.properties"
+
+jobs:
+  build_release:
+    name: build_release
+    runs-on: ubuntu-latest
+    steps:
+      # Setup Java environment in order to build the Android app.
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Get next version
+        uses: reecetech/version-increment@2024.10.1
+        id: version
+        with:
+          scheme: semver
+          increment: patch
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '23'
+        
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: ${{env.FLUTTER_CHANNEL}} # 'dev', 'alpha', default to: 'stable'
+          flutter-version: '3.24.5' # you can also specify exact version of flutter
+      
+      # Creating the key.properties file
+      - run: |
+          echo keyPassword=\${{ secrets.KEY_STORE }} > ${{env.PROPERTIES_PATH}}
+          echo storePassword=\${{ secrets.KEY_PASSWORD }} >> ${{env.PROPERTIES_PATH}}
+          echo keyAlias=\${{ secrets.KEY_ALIAS }} >> ${{env.PROPERTIES_PATH}}
+
+      # Decoding base64 key into a file
+      - run: echo "${{ secrets.KEYSTORE2 }}" | base64 --decode > android/app/key.jks
+
+      # Get flutter dependencies.
+      - run: |
+          flutter pub get
+          flutter build appbundle
+
+      # Statically analyze the Dart code for any errors.
+      - run: flutter analyze .
+
+      # Build apk.
+      - run: flutter build apk
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: "cittel_v${{ steps.version.outputs.version }}.apk"
+          path: build/app/outputs/apk/release/app-release.apk
+
+      - name: release
+        uses: actions/create-release@v1
+        id: create_release
+        with:
+          draft: false
+          prerelease: false
+          release_name: "v${{ steps.version.outputs.version }}"
+          tag_name: "v${{ steps.version.outputs.version }}"
+          body_path: CHANGES.md
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+
+      - name: upload linux artifact
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: build/app/outputs/apk/release/app-release.apk
+          asset_name: "cittel_v${{ steps.version.outputs.version }}.apk"
+          asset_content_type: application/gzip
+  

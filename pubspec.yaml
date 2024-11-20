@@ -5,14 +5,16 @@ version: 1.0.0+1
 
 
 environment:
-  sdk: '>=2.15.0-317.0.dev <3.0.0'
+  sdk: ^3.5.4
+  #sdk: '>=2.15.0-317.0.dev <3.0.0'
 
 
 dependencies:
   flutter:
     sdk: flutter
-  cupertino_icons: ^1.0.2
-  intl: ^0.17.0
+  cupertino_icons: ^1.0.8 
+  #cupertino_icons: ^1.0.2
+  #intl: ^0.17.0
 
 
 dev_dependencies:
